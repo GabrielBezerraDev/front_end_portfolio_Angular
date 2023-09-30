@@ -68,7 +68,8 @@
               "browserTarget": "Portifolio_Angular:build:production"
             },
             "development": {
-              "browserTarget": "Portifolio_Angular:build:development"
+              "browserTarget": "Portifolio_Angular:build:development",
+              "proxyConfig": "proxy.config.js"
             }
           },
           "defaultConfiguration": "development"
@@ -100,5 +101,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "b93bc6b1-9926-4eac-bbd2-9daee1f25056"
   }
 }
