@@ -1,15 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
 
 :root{
+  --width-format: 80%;
   --header-hieght: 10vh;
-  font-size: 1.5em;
+  --font-color: #ffffff;
+  --font-size: 1.8em;
+  --type-text: justify;
+  font-size: var(--font-size);
+  color: var(--font-color);
   font-family: sans-serif;
-  color: #ffffff;
-  text-align: justify;
+  text-align: var(--type-text);
   line-height: 1.5;
 }
 
 *{
   padding: 0;
   margin: 0;
+}
+
+h1{
+  font-size: calc(var(--font-size) + 0.1em);
 }

@@ -4,9 +4,19 @@ main{
   overflow-x: hidden;
 }
 
+.profile{
+  float: left;
+  margin: 2%;
+  width: 30%;
+  border: 1px solid #46026e;
+  border-radius: 10px;
+}
+
 .video{
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   position: relative;
 }
 
@@ -18,24 +28,59 @@ video{
 
 .brief{
   height: 60%;
-  width: 80%;
+  width: 100%;
   position: absolute;
-  left: 10%;
-  top: 10%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
 
+.brief h1{
+  font-size: calc(var(--font-size ) + 0.5em);
+}
+
+small{
+  font-size: var(--font-size);
+}
+
 .main{
   background-color: #15011a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding-bottom: 20px;
 }
 
 .description{
-    width: 80%;
-    margin: auto;
-    border-left: 1px solid #46026e;
-    border-right: 1px solid #46026e;
+    width: var(--width-format);
+    border: 1px solid #46026e;
+    margin-top: 20px;
     padding: 2%;
+}
+
+.icons{
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.svg-img-front, .svg-img-back, .programming, .dataBase, .devOps, .sis, .versionamento{
+  display: flex;
+}
+
+.svg-img-back, .dataBase, .devOps, .sis, .versionamento{
+  justify-content: center;
+  gap: 50px;
+}
+
+.svg{
+  width: 20%;
+}
+
+@media (max-width: 810px) and (min-width: 589px) {
+  .brief h1{
+    font-size: calc(var(--font-size ) - 0.1em);
+  }
 }
