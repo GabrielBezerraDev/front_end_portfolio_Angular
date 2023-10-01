@@ -1,0 +1,41 @@
+main{
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.video{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+video{
+  max-width: 100%;
+  z-index: -1;
+  margin-top: var(--header-hieght);
+}
+
+.brief{
+  height: 60%;
+  width: 80%;
+  position: absolute;
+  left: 10%;
+  top: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.main{
+  background-color: #15011a;
+}
+
+.description{
+    width: 80%;
+    margin: auto;
+    border-left: 1px solid #46026e;
+    border-right: 1px solid #46026e;
+    padding: 2%;
+}
