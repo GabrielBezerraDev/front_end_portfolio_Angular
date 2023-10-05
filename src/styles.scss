@@ -1,6 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 
 :root{
+
+.blurFilter{
+  filter: blur(12px);
+}
+
+input[type="checkbox"]{
+  cursor: pointer;
+}
+
   --width-format: 80%;
   --header-hieght: 10vh;
   --font-color: #ffffff;

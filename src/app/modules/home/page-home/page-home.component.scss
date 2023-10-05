@@ -50,7 +50,7 @@ small{
   flex-direction: column;
   align-items: center;
   gap: 40px;
-  padding-bottom: 20px;
+  padding-bottom: 50px;
 }
 
 .description{
@@ -58,6 +58,41 @@ small{
     border: 1px solid #46026e;
     margin-top: 20px;
     padding: 2%;
+}
+
+.pokedex{
+  width: calc(var(--width-format) - 40%);
+  border: 2px solid #46026e;
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  flex-direction: column;
+}
+
+.descriptionPoke{
+  padding: 3%;
+}
+
+.divBtn{
+  width: 94%;
+  padding-bottom: 2%;
+}
+
+.btnPoke{
+  padding: 2%;
+  border: 1px solid #46026e;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.img-pokeball{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .icons{
@@ -77,6 +112,11 @@ small{
 
 .svg{
   width: 20%;
+}
+
+.text-width{
+  width: calc(var(--width-format) + 4%);
+  text-align: start;
 }
 
 @media (max-width: 810px) and (min-width: 589px) {

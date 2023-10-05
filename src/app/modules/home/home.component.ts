@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TestingService } from 'src/app/services/testing.service';
 
 @Component({
@@ -12,7 +13,9 @@ public comprimento: string;
 
 constructor
 (
-  private testing: TestingService
+  private testing: TestingService,
+  private router: Router,
+  private route: ActivatedRoute
 ){
   this.getHelloWorld();
 }
@@ -24,6 +27,10 @@ public getHelloWorld():void{
       console.log(this.comprimento);
     }
   })
+}
+
+public navigateTo(router: string):void{
+  this.router.navigate([router],{relativeTo: this.route});
 }
 
 }

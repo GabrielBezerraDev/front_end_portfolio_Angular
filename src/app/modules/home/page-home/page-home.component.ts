@@ -1,4 +1,5 @@
-import { Component, ElementRef, AfterViewInit, Renderer2, OnInit } from '@angular/core';
+import { Component, ElementRef, Renderer2, OnInit, Output, EventEmitter} from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Competencias } from 'src/app/interfaces/competencias';
 import { styleRoot, widthScreen } from 'src/app/shared/utils/style-utils';
 
@@ -7,8 +8,8 @@ import { styleRoot, widthScreen } from 'src/app/shared/utils/style-utils';
   templateUrl: './page-home.component.html',
   styleUrls: ['./page-home.component.scss']
 })
-export class PageHomeComponent implements AfterViewInit, OnInit {
-
+export class PageHomeComponent implements OnInit {
+@Output() onRouter: EventEmitter<string> = new EventEmitter<string>();
 public competencias: Array<Competencias> =
 [
   {
@@ -82,10 +83,7 @@ public competencias: Array<Competencias> =
   }
 ];
 
-  constructor(
-    private elementRef: ElementRef,
-    private renderer: Renderer2
-  ){
+  constructor(){
 
   }
 
@@ -94,9 +92,8 @@ ngOnInit(): void {
   console.log(widthScreen);
 
 }
-
-ngAfterViewInit(): void {
-
+public navigateTo():void{
+  this.onRouter.emit("pokedex");
 }
 
 }

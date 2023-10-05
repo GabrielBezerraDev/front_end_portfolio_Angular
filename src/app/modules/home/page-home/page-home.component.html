@@ -24,7 +24,19 @@
           <img *ngFor="let icon of competencia.iconsSvg" class="svg" src="{{icon}}">
         </div>
       </div>
+    </div>
 
+    <h1 class="text-width">Projetos:</h1>
+    <p class="text-width">Nessa seção vamos dá uma olhada para alguns projetos: </p>
+    <h1 class="text-width">Pokedex:</h1>
+    <div class="pokedex">
+      <img src="/assets/gifs/pokebola.gif" width="100%">
+      <div class="descriptionPoke">
+        Escolha os seus pokemons preferidos e se torne um verdadeiro treinador porkemon
+      </div>
+      <div class="divBtn">
+        <button class="btnPoke" (click)="navigateTo()">Ir para Pokedex</button>
+      </div>
     </div>
   </div>
 </main>

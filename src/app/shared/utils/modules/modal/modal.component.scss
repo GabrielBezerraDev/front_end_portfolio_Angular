@@ -1,0 +1,26 @@
+.modal{
+  position: fixed;
+  top: 12vh;
+  left: 25vw;
+  width: 50vw;
+  border-radius: 20px;
+  border: 1px solid #000000;
+  padding: 2%;
+  color: #000000;
+  overflow: hidden;
+}
+
+.descriptionModal{
+  overflow-y: auto;
+  max-height: 50vh;
+  padding: 2%;
+}
+
+.termos{
+  display: flex;
+  gap: 10px;
+}
+
+input[type="checkbox"]{
+  width: 20px;
+}
