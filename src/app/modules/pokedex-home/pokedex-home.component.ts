@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./pokedex-home.component.scss']
 })
 export class PokedexHomeComponent {
+  public blur: string = "blurFilter";
 
+
+  public removeBlur():void{
+    this.blur = "";
+  }
 }

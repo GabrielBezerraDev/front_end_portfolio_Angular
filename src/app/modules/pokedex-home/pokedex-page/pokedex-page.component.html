@@ -1,0 +1,16 @@
+<main class="header-gap">
+  <img src="/assets/imgs/pokemon.png">
+  <div class="divMain">
+    <aside>
+      <h1>Filter</h1>
+      <hr>
+      <div class="types">
+        <div class="pokemonOption" *ngFor="let typeP of typePokemon">
+          <p>{{typeP.tittle}}</p>
+          <img class="iconP" src="{{typeP.iconType}}" [ngStyle]="{'background-color':typeP.iconColor}">
+        </div>
+      </div>
+    </aside>
+    <div class="booth"></div>
+  </div>
+</main>

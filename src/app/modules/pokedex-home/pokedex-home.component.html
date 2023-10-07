@@ -1,2 +1,8 @@
-<div></div>>
-<app-modal></app-modal>
+<!-- Colocar o Blur de volta dps -->
+<div [ngClass]="blur">
+  <app-header-pokedex></app-header-pokedex>
+  <app-pokedex-page></app-pokedex-page>
+</div>
+<app-modal
+(onRemoveBlur)="removeBlur()"
+></app-modal>

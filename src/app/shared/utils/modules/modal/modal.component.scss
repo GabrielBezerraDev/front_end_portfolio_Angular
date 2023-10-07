@@ -1,4 +1,16 @@
+@keyframes modalAnimation{
+  from{
+    top: 12vh;
+    opacity: 0;
+  }
+  to{
+    top:10vh;
+    opacity: 1;
+  }
+}
+
 .modal{
+  background-color: rgb(255, 255, 255);
   position: fixed;
   top: 12vh;
   left: 25vw;
@@ -8,12 +20,21 @@
   padding: 2%;
   color: #000000;
   overflow: hidden;
+  visibility: hidden;
+  z-index: 1;
+  animation: modalAnimation 1.4s forwards;
 }
 
 .descriptionModal{
   overflow-y: auto;
   max-height: 50vh;
   padding: 2%;
+}
+
+.divBtn{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .termos{
@@ -23,4 +44,19 @@
 
 input[type="checkbox"]{
   width: 20px;
+}
+
+button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+mat-icon{
+  color: #ffffff;
+}
+
+.visibilidade{
+  visibility: visible;
 }

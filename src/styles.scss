@@ -1,9 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
-
 :root{
 
+button{
+  cursor: pointer;
+}
+
+.header-gap{
+  margin-top: var(--header-height);
+}
+
+header{
+  width: 100vw;
+  height: var(--header-height);
+  position: fixed;
+  z-index: 1;
+  top: 0;
+}
+
+
 .blurFilter{
-  filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  filter: blur(8px);
+  user-select: none;
+  pointer-events: none;
 }
 
 input[type="checkbox"]{
@@ -11,7 +30,7 @@ input[type="checkbox"]{
 }
 
   --width-format: 80%;
-  --header-hieght: 10vh;
+  --header-height: 10vh;
   --font-color: #ffffff;
   --font-size: 1.8em;
   --type-text: justify;
@@ -30,3 +49,5 @@ input[type="checkbox"]{
 h1{
   font-size: calc(var(--font-size) + 0.1em);
 }
+
+

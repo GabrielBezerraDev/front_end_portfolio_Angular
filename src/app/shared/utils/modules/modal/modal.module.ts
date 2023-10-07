@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ModalComponent } from './modal.component';
+import { AngularMaterialModule } from '../angular-material/angular-material.module';
 
 
 
@@ -9,7 +10,8 @@ import { ModalComponent } from './modal.component';
     ModalComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    AngularMaterialModule
   ],
   exports:[
     ModalComponent

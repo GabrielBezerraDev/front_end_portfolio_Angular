@@ -4,12 +4,12 @@ import { HomeComponent } from './home.component';
 
 const routes: Routes = [
   {
-    path:"",
-    component: HomeComponent
-  },
-  {
     path:"pokedex",
     loadChildren: () => import("../pokedex-home/pokedex-home.module").then((m) => m.PokedexHomeModule)
+  },
+  {
+    path:"**",
+    component: HomeComponent
   }
 ];
 
