@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TypePokemon } from 'src/app/interfaces/types-pokemon';
 
 @Component({
@@ -6,7 +6,7 @@ import { TypePokemon } from 'src/app/interfaces/types-pokemon';
   templateUrl: './pokedex-page.component.html',
   styleUrls: ['./pokedex-page.component.scss']
 })
-export class PokedexPageComponent {
+export class PokedexPageComponent implements OnInit{
 
 public typePokemon: Array<TypePokemon> =
   [
@@ -101,5 +101,10 @@ public typePokemon: Array<TypePokemon> =
       iconColor:"#557fa1"
     }
   ]
+
+  ngOnInit(): void {
+
+
+  }
 
 }
