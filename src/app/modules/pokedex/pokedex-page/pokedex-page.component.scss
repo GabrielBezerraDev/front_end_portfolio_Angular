@@ -64,11 +64,59 @@ main .booth{
   width: 300px;
 }
 
-.card-description{
+.about-pokemon{
+  display: flex;
+  gap: 12px;
+}
+
+.card-carousel{
+  width: 88%;
   max-height: 40vh;
   overflow-y: auto;
   padding: 2%;
+  display: flex;
+  flex-wrap: nowrap;
 }
+
+.arrow-left, .arrow-right{
+  width: 6%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pokemon-description{
+  width: 100%;
+  background-color: #ed0909;
+}
+
+.teste{
+  width: 100%;
+}
+
+.icon-left{
+  padding: 5px;
+  padding-left: 12px;
+}
+
+.icon-right{
+  padding: 5px;
+}
+
+.icon-arrow{
+  background-color: #ed0909;
+  border-radius: 60px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 30px;
+}
+
+
+
+
 
 
 

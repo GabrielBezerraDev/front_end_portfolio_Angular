@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
 import { TypePokemon } from 'src/app/interfaces/types-pokemon';
 
 @Component({
@@ -102,9 +102,20 @@ public typePokemon: Array<TypePokemon> =
     }
   ]
 
+  constructor(
+    private elementRef: ElementRef,
+    private renderer: Renderer2
+  ){
+
+  }
+
   ngOnInit(): void {
 
 
+  }
+
+  public next():void{
+    this.renderer.setStyle(this.elementRef.nativeElement.querySelector(".teste"),"transform","translateX(-500px)");
   }
 
 }
