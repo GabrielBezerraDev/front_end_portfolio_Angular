@@ -1,6 +1,6 @@
 import { Component, ElementRef, Renderer2, OnInit, Output, EventEmitter} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Competencias } from 'src/app/interfaces/competencias';
+import { Competencias } from '../interfaces/competencias';
 import { styleRoot, widthScreen } from 'src/app/shared/utils/style-utils';
 
 @Component({
