@@ -3,7 +3,10 @@
   <img src="/assets/imgs/pokemon.png">
   <div class="divMain">
     <aside>
-      <h1>Filter</h1>
+      <div class="header-filter">
+        <h1>Filter</h1>
+        <i class="bi bi-funnel-fill funnel"></i>
+      </div>
       <hr>
       <div class="types">
         <div class="pokemonOption" *ngFor="let typeP of typePokemon">
@@ -12,7 +15,32 @@
         </div>
       </div>
     </aside>
+
     <div class="booth">
+      <div class="filter-pokemon">
+        <div class="filter-search">
+          <i class="bi bi-search"></i>
+          <input class="form-input" placeholder="Pesquise pelo nome do Pokemon">
+        </div>
+        <div>
+          <div class="gap-element grid">
+            <i class="bi bi-grid-fill"></i>
+            <i class="bi bi-grid-1x2-fill"></i>
+          </div>
+          <div class="gap-element">
+            <i #iconDropDown class="bi bi-caret-right-fill rotateInit"></i>
+            <div class="drop-down">
+              <button class="btn-filter">
+                <small (click)="teste(iconDropDown,dropDownBody)">ordenar por</small>
+                <i class="bi bi-clipboard-fill"></i>
+              </button>
+              <div #dropDownBody class="drop-down-body">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div class="card">
         <div class="imgPokemon">
@@ -20,10 +48,10 @@
         </div>
         <div class="body-card">
             <div class="arrow-left">
-              <mat-icon (click)="changeElement('left')"  class="icon-arrow icon-left" aria-hidden="false" fontIcon="arrow_back_ios"></mat-icon>
+              <i class="bi bi-arrow-left-circle-fill" (click)="changeElement('left')"></i>
             </div>
             <div class="carousel-info">
-              <div class="attributes-pokemon currentElement">
+              <div class="attributes-pokemon show">
                 <h1>Atributos</h1>
                 <hr>
                 <div class="section-attributes">
@@ -62,11 +90,15 @@
 
                 </div>
               </div>
-              <div class="teste" style="background-color: blue;"></div>
+              <div class="teste">
+                <h1>Sobre o Pokemon</h1>
+                <hr>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum obcaecati quo cupiditate maiores minus, eveniet quidem earum tempora ad consequatur animi? Magni sit, aspernatur quas magnam sed ullam omnis dolore exercitationem ab suscipit, assumenda ipsam illo dolores hic accusantium. Animi esse accusantium quasi neque sed. Obcaecati beatae maxime excepturi esse nobis itaque velit rerum laudantium voluptates? Error voluptates, vero ducimus soluta voluptate eveniet repellendus eos assumenda ratione culpa, tempora ipsum commodi ab in amet ex quasi deserunt nesciunt consequatur illo! Temporibus sunt eos doloribus minima ducimus architecto perspiciatis quas possimus quod quis consectetur hic, suscipit, accusamus omnis consequatur repellat sequi atque quam? Distinctio adipisci commodi esse. Quibusdam, error adipisci! Incidunt officia temporibus dolor expedita similique quo sapiente ipsa id quas! Delectus qui sapiente consequuntur dignissimos quo eligendi doloribus vero nulla deleniti? Esse distinctio cupiditate quod, harum ad molestias reiciendis perferendis quibusdam aliquid at laudantium quo ipsum sit adipisci vitae atque in? Voluptatibus ea ex vero nesciunt quas laudantium similique, deserunt cupiditate id sed officiis excepturi assumenda cumque nihil autem! Suscipit tempora illo odit. Unde veritatis totam quae illo, labore provident soluta? Alias sunt provident fuga minima. Incidunt dolorem ratione repellat ad, quam, recusandae necessitatibus expedita reiciendis repellendus doloribus, nesciunt maiores dolorum ipsam deleniti tempora quibusdam! Adipisci aut assumenda expedita consequatur delectus est, perferendis sapiente amet corporis mollitia illo reprehenderit atque harum commodi laborum soluta quas ipsa dolore perspiciatis obcaecati iusto dolorem. Ea consequuntur exercitationem velit minima dolorem voluptate voluptatum nostrum optio facilis dolore quidem voluptatem, iusto amet ipsum officiis modi rem ad pariatur aliquid aliquam asperiores ab sunt? Quaerat suscipit unde enim, consectetur sapiente asperiores assumenda a qui eveniet? Assumenda, magnam! Nemo nobis fugiat, ab iste eos sequi libero quasi odit doloribus culpa expedita ipsam iure voluptatibus aut. Corporis ducimus fuga voluptate reprehenderit illo odio at porro id explicabo laborum pariatur sunt cum quia voluptatibus deleniti commodi, modi reiciendis ipsa asperiores? Deleniti laborum autem excepturi et voluptate. Veritatis, molestiae facere ut quidem sed blanditiis facilis eos ipsa a repellat ad cumque laboriosam quo laborum, dolorum ex molestias at dolore delectus tempora. Quod libero, magni ab enim aliquid sapiente nemo deleniti architecto, dolor id alias ad labore. Reiciendis tempore beatae at, mollitia nobis modi enim itaque laudantium suscipit nostrum temporibus nemo aut ipsam est delectus qui magni numquam iusto quibusdam, omnis neque animi praesentium nihil? Excepturi sint saepe dolore delectus laudantium nisi perferendis, blanditiis, fuga sed enim cum ducimus, magnam amet ipsam accusantium vitae maxime ipsum vero explicabo consequatur inventore similique earum voluptates accusamus. Exercitationem, laborum cupiditate? Ducimus deleniti assumenda molestiae delectus laudantium mollitia iste voluptates obcaecati dolorem, corrupti incidunt aliquam temporibus natus esse nihil. Modi non obcaecati error! Voluptates voluptate facilis porro doloribus deleniti doloremque omnis error iure, in commodi consequuntur cum esse saepe culpa odio, veritatis quia architecto consectetur laudantium! Dignissimos culpa eligendi quia quis voluptates atque veritatis libero. Nam aliquid consequatur molestiae! Earum, obcaecati a tempora ipsam qui commodi assumenda asperiores reprehenderit quas beatae eveniet recusandae facere excepturi magnam. Rem ipsa tenetur, dignissimos amet molestiae harum dolores fugit a necessitatibus commodi, rerum temporibus explicabo pariatur iste expedita facilis sapiente? Minima, praesentium cumque eos inventore velit necessitatibus fugit? Minima quos impedit asperiores tempora dicta nisi quod sapiente. Odit, explicabo labore! Error, eligendi odit. Modi molestias ea sit saepe reiciendis impedit eum? Debitis, quia. Laudantium officiis doloribus explicabo, ipsa, earum molestias culpa magni quod facilis perspiciatis odit reprehenderit, atque neque ipsam repellat distinctio voluptatibus impedit error. Omnis, explicabo repudiandae. Debitis doloribus cupiditate ducimus ratione incidunt amet similique ex iure, exercitationem minus, inventore ut laboriosam et, natus iusto animi. Id deserunt corporis unde voluptates vitae ad esse minus facere accusantium? Velit soluta voluptas illum, minus sapiente cumque, quae, in natus nam tenetur debitis maiores excepturi praesentium laudantium. Harum unde repudiandae, totam soluta quibusdam tempore aspernatur accusantium explicabo at a maiores blanditiis ullam. Incidunt eos doloremque aperiam voluptatem similique alias repellendus a in sed, natus quia! Aliquam nostrum perspiciatis, inventore fugiat eos sed obcaecati esse eveniet dolore quae harum aspernatur? Perferendis sit, repudiandae tempora at soluta, a voluptate nisi hic suscipit laborum debitis veritatis ipsum quaerat doloremque quos cum repellat iusto totam. Ad, veritatis! Atque, saepe culpa. Delectus eum unde reiciendis vitae, tempora saepe quis laborum itaque, corrupti quos cum amet soluta aut provident corporis ipsam labore distinctio non suscipit ad earum eaque inventore pariatur. Consequatur, rem, voluptas repudiandae voluptatum excepturi sit fuga animi delectus alias, inventore nulla maxime repellat ab a eum laboriosam reiciendis enim quia in consectetur doloremque omnis modi necessitatibus officia. Numquam, qui. Fuga architecto obcaecati temporibus eaque harum, sed doloribus laudantium nisi voluptate totam porro ex quasi quisquam qui, adipisci mollitia dolorem quaerat. Quod ipsum, vero vitae, consequuntur aliquam repellat animi fuga at ex quibusdam maiores placeat doloremque obcaecati labore accusantium quo, sit inventore vel nobis reiciendis modi optio illum! Id explicabo dicta inventore exercitationem, tempore deserunt quo saepe cum ullam repellat placeat officiis veniam vel perspiciatis quaerat magni earum possimus corrupti? Repellat natus neque molestiae corrupti voluptatum perferendis nisi. Corrupti dolor incidunt adipisci saepe similique tenetur distinctio nam enim consequatur numquam, autem odit nulla, perferendis nemo recusandae porro sed soluta tempore illum in excepturi error voluptatibus? Vel, beatae omnis asperiores rerum necessitatibus, numquam et dignissimos tenetur atque delectus ab, ad rem culpa veritatis consequatur mollitia saepe voluptate quam sunt maxime illum blanditiis ea quos officiis! Fugiat debitis excepturi, adipisci minus non ea labore quisquam animi, omnis esse expedita? Itaque sequi deleniti ipsum ut, quod excepturi maiores temporibus illo sed veritatis error. Reiciendis atque animi libero, corporis praesentium veritatis! Quas id non, corporis, nesciunt vero consectetur temporibus corrupti atque quos officiis laborum reiciendis nulla rem a est quis enim deleniti! Voluptatum, natus laborum atque earum molestias corporis soluta harum, pariatur ducimus eius eum asperiores quae non, quidem veniam. Quis nemo quo officia sit, iure animi cum porro. Laborum cupiditate, eum est voluptatibus inventore quos provident facere quidem distinctio sequi, ipsum qui quasi! Quibusdam nesciunt culpa facilis, temporibus non sint aliquid nostrum, adipisci nemo, soluta sequi vel impedit itaque quas ea? Similique corporis consequuntur nisi! Consequuntur ut consectetur ea!</p>
+              </div>
               <div class="teste" style="background-color: brown;"></div>
             </div>
             <div class="arrow-right">
-              <mat-icon (click)="changeElement('right')" class="icon-arrow icon-right" aria-hidden="false" fontIcon="arrow_forward_ios"></mat-icon>
+              <i class="bi bi-arrow-right-circle-fill" (click)="changeElement('right')" ></i>
             </div>
         </div>
         <div>

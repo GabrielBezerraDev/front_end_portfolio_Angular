@@ -1,7 +1,7 @@
 import { TypePokemon } from '../interfaces/types-pokemon';
 
 export class PokemonsTypes{
-  public readonly GRASS: TypePokemon =
+public readonly GRASS: TypePokemon =
 {
   tittle: "Grass",
   iconType:"/assets/svg/pokemon/pokemon-types/grass.svg",

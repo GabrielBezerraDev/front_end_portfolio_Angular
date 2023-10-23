@@ -32,19 +32,21 @@ public typePokemon: Array<TypePokemon>;
     if(side === "left"){
       if(this.carouselCurrent <= 0) return;
       console.log(carouselElements[this.carouselCurrent]);
-      this.renderer.removeClass(carouselElements[this.carouselCurrent],"currentElement");
+      this.renderer.removeClass(carouselElements[this.carouselCurrent],"show");
       this.carouselCurrent -= 1;
       console.log(carouselElements[this.carouselCurrent]);
-      this.renderer.addClass(carouselElements[this.carouselCurrent],"currentElement");
+      this.renderer.addClass(carouselElements[this.carouselCurrent],"show");
     }else{
       if(this.carouselCurrent >= carouselElements.length-1) return;
         console.log(carouselElements[this.carouselCurrent]);
-        this.renderer.removeClass(carouselElements[this.carouselCurrent],"currentElement");
+        this.renderer.removeClass(carouselElements[this.carouselCurrent],"show");
         this.carouselCurrent += 1;
         console.log(carouselElements[this.carouselCurrent]);
-        this.renderer.addClass(carouselElements[this.carouselCurrent],"currentElement");
+        this.renderer.addClass(carouselElements[this.carouselCurrent],"show");
 
     }
+
+
 
 
     // element.scrollIntoView({
@@ -54,6 +56,17 @@ public typePokemon: Array<TypePokemon>;
 
     // console.log(carouselElements);
     // console.dir(cardCarousel);
+  }
+
+  public teste(icon: HTMLElement,dropDownBody:HTMLDivElement):void{
+    if(icon.classList.contains("rotateInit")){
+      this.renderer.removeClass(icon,"rotateInit");
+      this.renderer.addClass(icon,"rotateEnd");
+    }else{
+      this.renderer.addClass(icon,"rotateInit");
+      this.renderer.removeClass(icon,"rotateEnd");
+    }
+    dropDownBody.classList.toggle("show");
   }
 
 }
