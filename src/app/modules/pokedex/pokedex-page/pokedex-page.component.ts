@@ -58,7 +58,7 @@ public typePokemon: Array<TypePokemon>;
     // console.dir(cardCarousel);
   }
 
-  public teste(icon: HTMLElement,dropDownBody:HTMLDivElement):void{
+  public dropDown(icon: HTMLElement,dropDownBody:HTMLDivElement):void{
     if(icon.classList.contains("rotateInit")){
       this.renderer.removeClass(icon,"rotateInit");
       this.renderer.addClass(icon,"rotateEnd");

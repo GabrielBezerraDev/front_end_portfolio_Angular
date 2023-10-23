@@ -30,8 +30,8 @@
           <div class="gap-element">
             <i #iconDropDown class="bi bi-caret-right-fill rotateInit"></i>
             <div class="drop-down">
-              <button class="btn-filter">
-                <small (click)="teste(iconDropDown,dropDownBody)">ordenar por</small>
+              <button class="btn-filter"  (click)="dropDown(iconDropDown,dropDownBody)">
+                <small>ordenar por</small>
                 <i class="bi bi-clipboard-fill"></i>
               </button>
               <div #dropDownBody class="drop-down-body">
