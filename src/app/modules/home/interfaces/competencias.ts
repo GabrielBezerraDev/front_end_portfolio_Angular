@@ -1,5 +1,7 @@
+import { Mastery } from "./mastery";
+
 export interface Competencias{
   titulo: string;
   estilo?:string;
-  iconsSvg: Array<string>;
+  maestrias: Array<Mastery>;
 }

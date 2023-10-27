@@ -4,6 +4,15 @@ main{
   overflow-x: hidden;
 }
 
+@keyframes levelup{
+  from{
+    width: 0%;
+  }
+  to{
+    width: 20%;
+  }
+}
+
 .profile{
   float: left;
   margin: 2%;
@@ -81,6 +90,15 @@ small{
   padding-bottom: 2%;
 }
 
+.btn-df{
+  background-color: transparent;
+  border: hidden;
+}
+
+.btn-df:hover{
+  background-color: white;
+}
+
 .btnPoke{
   padding: 2%;
   border: 1px solid #46026e;
@@ -101,6 +119,40 @@ small{
   gap: 40px;
 }
 
+.mastery{
+  max-height: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.mastery-bar{
+  width: 100%;
+  height: 100px;
+  border-radius: 20px;
+  border: 1px solid black;
+  display: flex;
+  overflow: hidden;
+}
+
+.mastery-level{
+  background-color: red;
+  height: 100%;
+  width: 0%;
+  transition: width 1s;
+  // animation: levelup 2s forwards;
+}
+
+.border-right{
+  border-right: 1px solid black;
+}
+
+.mastery-description{
+  overflow-y: auto;
+  box-sizing: border-box;
+  padding-right: 2%;
+}
+
 .svg-img-front, .svg-img-back, .programming, .dataBase, .devOps, .sis, .versionamento{
   display: flex;
 }
@@ -112,6 +164,21 @@ small{
 
 .svg{
   width: 20%;
+  box-sizing: border-box;
+  padding: 2%;
+  cursor: pointer;
+}
+
+.svg:hover{
+  background-color: #46026e;
+}
+
+.competencia{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: var(--width-format);
+
 }
 
 .text-width{

@@ -2,6 +2,8 @@ import { Component, ElementRef, Inject, OnInit, Renderer2 } from '@angular/core'
 import { TypePokemon } from '../interfaces/types-pokemon';
 import { AttriubutesPokemon } from '../interfaces/attributes-pokemon';
 import { PokemonsTypes } from '../enum/enum-typesPokemon';
+import { ScreenUtils } from 'src/app/shared/utils/screen-utils';
+import { GridStatus } from '../interfaces/grid-status';
 
 @Component({
   selector: 'app-pokedex-page',
@@ -13,17 +15,29 @@ export class PokedexPageComponent implements OnInit{
 public typePokemon: Array<TypePokemon>;
 
   public carouselCurrent: number = 0;
+  public asideDefault: boolean = true;
+  public gridSecondary: boolean = true;
+  public sectionAttributes: HTMLElement;
+  public alignTypes: HTMLElement;
 
   constructor(
     private elementRef: ElementRef,
     private renderer: Renderer2,
-    public pokemonTypes: PokemonsTypes
+    public pokemonTypes: PokemonsTypes,
+    private screenUtils: ScreenUtils
   ){
 
   }
 
   ngOnInit(): void {
     this.typePokemon = Object.values(this.pokemonTypes);
+    this.sectionAttributes = this.elementRef.nativeElement.querySelector(".section-attributes");
+    this.alignTypes = this.elementRef.nativeElement.querySelector(".align-type");
+    this.setLayoutDefault();
+    console.log(this.screenUtils.getWidthScreen());
+    if(this.screenUtils.getWidthScreen() < 1470) this.asideDefault = false;
+    if(this.screenUtils.getWidthScreen() <= 892) this.gridSecondary = false;
+    //892
   }
 
   public changeElement(side:string):void{
@@ -46,9 +60,6 @@ public typePokemon: Array<TypePokemon>;
 
     }
 
-
-
-
     // element.scrollIntoView({
     //   inline:"center",
     //   behavior:"smooth"
@@ -58,15 +69,40 @@ public typePokemon: Array<TypePokemon>;
     // console.dir(cardCarousel);
   }
 
-  public dropDown(icon: HTMLElement,dropDownBody:HTMLDivElement):void{
-    if(icon.classList.contains("rotateInit")){
-      this.renderer.removeClass(icon,"rotateInit");
-      this.renderer.addClass(icon,"rotateEnd");
-    }else{
-      this.renderer.addClass(icon,"rotateInit");
-      this.renderer.removeClass(icon,"rotateEnd");
+  public changeGrid(gridStatus:GridStatus):void{
+    console.log(gridStatus.iconGrid);
+    let layout: HTMLElement = this.elementRef.nativeElement.querySelector(".grid-card");
+    let currentGrid: HTMLElement = this.elementRef.nativeElement.querySelector(".selected");
+    if(gridStatus.grid && layout.classList.contains("gridSecondary")) {
+      this.setLayoutDefault();
+      this.renderer.removeClass(layout,"gridSecondary")
+      this.renderer.removeClass(currentGrid,"selected")
+      this.renderer.addClass(gridStatus.iconGrid, "selected");
     }
-    dropDownBody.classList.toggle("show");
+    else{
+      if(!gridStatus.grid && !layout.classList.contains("gridSecondary")) {
+        this.setLayoutSecondary();
+        this.renderer.addClass(layout,"gridSecondary")
+        this.renderer.removeClass(currentGrid,"selected")
+        this.renderer.addClass(gridStatus.iconGrid, "selected");
+      }
+    }
+  }
+
+  public setLayoutDefault():void{
+    if(this.screenUtils.getWidthScreen() < 1196 && this.screenUtils.getWidthScreen() >= 610){
+      this.renderer.setStyle(this.sectionAttributes,"grid-template-columns","repeat(2,1fr)");
+      this.renderer.setStyle(this.sectionAttributes,"text-align","center");
+      this.renderer.setStyle(this.alignTypes,"align-items","center");
+    }
+  }
+
+  public setLayoutSecondary():void{
+    if(this.screenUtils.getWidthScreen() < 1196){
+      this.renderer.setStyle(this.sectionAttributes,"grid-template-columns","1fr");
+      this.renderer.setStyle(this.sectionAttributes,"text-align","start");
+      this.renderer.setStyle(this.alignTypes,"align-items","start");
+    }
   }
 
 }

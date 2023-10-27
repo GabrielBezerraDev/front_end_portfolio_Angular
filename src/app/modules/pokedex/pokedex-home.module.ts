@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { PokedexHomeRoutingModule } from './pokedex-home-routing.module';
 import { PokedexHomeComponent } from './pokedex-home.component';
-import { ModalModule } from 'src/app/shared/utils/modules/modal/modal.module';
 import { HeaderPokedexComponent } from './header-pokedex/header-pokedex.component';
+import { FilterPokemonComponent } from './components/filter-pokemon/filter-pokemon.component';
 
 
 @NgModule({
@@ -15,7 +15,6 @@ import { HeaderPokedexComponent } from './header-pokedex/header-pokedex.componen
   imports: [
     CommonModule,
     PokedexHomeRoutingModule,
-    ModalModule
   ]
 })
 export class PokedexHomeModule { }

@@ -1,0 +1,29 @@
+<div class="filter-pokemon">
+  <div class="filter-search">
+    <i class="bi bi-search"></i>
+    <input class="form-input" placeholder="Pesquise pelo nome do Pokemon">
+  </div>
+  <div class="ajust-elements">
+    <div>
+      <div *ngIf="gridSecondary" class="gap-element grid">
+        <i #gridSecondary (click)="changeGrid(gridSecondary)" class="bi bi-grid-fill grid-icon"></i>
+        <i #gridDefault (click)="changeGrid(gridDefault, 'default')" class="bi bi-grid-1x2-fill selected grid-icon"></i>
+      </div>
+      <div class="gap-element">
+        <i #iconDropDown class="bi bi-caret-right-fill rotateInit"></i>
+        <div class="drop-down">
+          <button class="btn-filter"  (click)="dropDown(iconDropDown,dropDownBody)">
+            <small>ordenar por</small>
+            <i class="bi bi-clipboard-fill"></i>
+          </button>
+          <div #dropDownBody class="drop-down-body">
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="!asideDefault" class="menu">
+      <i class="bi bi-list menu-icon"></i>
+    </div>
+  </div>
+</div>
