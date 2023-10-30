@@ -13,6 +13,15 @@ main{
   }
 }
 
+@keyframes fade {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
 .profile{
   float: left;
   margin: 2%;
@@ -127,8 +136,10 @@ small{
 }
 
 .mastery-bar{
+  flex-shrink: 0;
   width: 100%;
-  height: 100px;
+  max-height: 200px;
+  height: 30px;
   border-radius: 20px;
   border: 1px solid black;
   display: flex;
@@ -143,8 +154,31 @@ small{
   // animation: levelup 2s forwards;
 }
 
+.legends{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.styleLegend{
+  font-weight: bold;
+}
+
+span{
+  color: #b168db;
+}
+
 .border-right{
   border-right: 1px solid black;
+}
+
+.hidden{
+  display: none;
+}
+
+.show{
+  display: block;
+  animation: fade 1s forwards;
 }
 
 .mastery-description{
@@ -157,7 +191,7 @@ small{
   display: flex;
 }
 
-.svg-img-back, .dataBase, .devOps, .sis, .versionamento{
+.svg-img-back,.svg-img-front,.dataBase, .devOps, .sis, .versionamento{
   justify-content: center;
   gap: 50px;
 }
