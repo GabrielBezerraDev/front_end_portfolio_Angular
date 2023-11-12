@@ -16,4 +16,8 @@ export class ScreenUtils{
     return this.screenHeight;
   }
 
+  public resetScrollUser():void{
+    window.scrollTo(0,0);
+  }
+
 }

@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, Output, AfterViewInit } from '@angular/core';
+import { styleRoot } from '../../utils/style-utils';
 
 
 @Component({
@@ -6,10 +7,25 @@ import { Component, EventEmitter, Output } from '@angular/core';
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.scss']
 })
-export class ModalComponent {
+export class ModalComponent implements AfterViewInit {
   @Output() onRemoveBlur: EventEmitter<void> = new EventEmitter<void>();
-  public visibilidade: string = "visibilidade";
+  @Input() tittleModal: string = "Faça Login";
+  @Input() visibilidade: string = "visibilidade";
+  public modal: HTMLElement;
 
+  constructor(
+    private elementRef: ElementRef
+  ){}
+
+  ngAfterViewInit(): void {
+
+    // styleRoot?.style.setProperty("--body-y","hidden");
+
+    this.modal = this.elementRef.nativeElement.querySelector(".modal");
+    setTimeout(() => {
+      this.modal.style.opacity = "1";
+    }, 1)
+  }
 
   public setVisibilidade():void{
     this.visibilidade = "";
@@ -20,6 +36,8 @@ export class ModalComponent {
   }
 
   public acceptTermo():void{
+    this.modal.style.opacity = "0";
+    styleRoot?.style.setProperty("--body-y","none");
     this.setVisibilidade();
     this.removeBlur();
   }

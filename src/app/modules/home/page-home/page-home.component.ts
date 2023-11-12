@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Competencias } from '../interfaces/competencias';
 import { styleRoot, widthScreen } from 'src/app/shared/utils/style-utils';
 import { MasteryLevel } from '../Enum/mastery-level';
+import { ScreenUtils } from 'src/app/shared/utils/screen-utils';
+import { body } from 'src/app/shared/utils/document-utils';
 
 @Component({
   selector: 'app-page-home',
@@ -187,10 +189,13 @@ public coutClass: Array<number> = [0,0,0,0,0,0,0];
 public level: number = 0;
 public masteryLevels: Array<string> = Object.values(MasteryLevel);
 public styleSpan: string = "styleLegend";
+public visibilidadeModal = " ";
+public isAlreadyPage: boolean = false;
 
   constructor(
     private elementRef: ElementRef,
-    private renderer: Renderer2
+    private renderer: Renderer2,
+    private screenUtils: ScreenUtils,
   ){
 
   }
@@ -198,7 +203,6 @@ public styleSpan: string = "styleLegend";
 ngAfterViewInit(): void {
   this.disable();
 }
-
 
 public disable():void{
   this.mastery = this.elementRef.nativeElement.querySelectorAll(".icons");
@@ -208,7 +212,20 @@ public disable():void{
 }
 
 public navigateTo():void{
+  if(!this.isAlreadyPage){
+    this.visibilidadeModal = "visibilidade";
+    this.addFilter();
+    return;
+  }
   this.onRouter.emit("pokedex");
+}
+
+public hiddenMenu():void{
+  this.renderer.addClass(this.elementRef.nativeElement.querySelector(".menu-page"),"hidden-menu");
+}
+
+public showMenu():void{
+  this.renderer.removeClass(this.elementRef.nativeElement.querySelector(".menu-page"),"hidden-menu");
 }
 
 public selectedTech(indexTech:number, indexMain: number, level: number, tech: string, resumo?: string):void{
@@ -249,6 +266,14 @@ public animationBar(level: number, indexMain: number):void{
     }
     this.animationBar(level,indexMain);
   }, 500)
+}
+
+public removeFilter():void{
+  this.renderer.removeClass(this.elementRef.nativeElement.querySelector(".blurFilter"),"blurFilter");
+}
+
+public addFilter():void{
+  this.renderer.addClass(this.elementRef.nativeElement.querySelector(".blurFilter"),"blurFilter");
 }
 
 }

@@ -13,6 +13,10 @@ button{
   cursor: pointer;
 }
 
+body{
+  overflow-y: var(--body-y);
+}
+
 .header-gap{
   margin-top: var(--header-height);
 }
@@ -38,6 +42,7 @@ input[type="checkbox"]{
   cursor: pointer;
 }
 
+  --body-y: none;
   --width-format: 80%;
   --header-height: 10vh;
   --font-color: #ffffff;

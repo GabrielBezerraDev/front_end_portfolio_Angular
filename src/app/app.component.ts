@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { styleRoot, widthScreen } from './shared/utils/style-utils';
 
-    const style = styleRoot?.style;
+const style = styleRoot?.style;
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

@@ -1,16 +1,15 @@
 @keyframes modalAnimation{
   from{
     top: 12vh;
-    opacity: 0;
   }
   to{
     top:10vh;
-    opacity: 1;
   }
 }
 
 .modal{
   background-color: rgb(255, 255, 255);
+  opacity: 0;
   position: fixed;
   top: 12vh;
   left: 25vw;
@@ -18,16 +17,18 @@
   border-radius: 20px;
   border: 1px solid #000000;
   padding: 2%;
+  max-height: 90vh;
   color: #000000;
   overflow: hidden;
   visibility: hidden;
   z-index: 1;
   animation: modalAnimation 1.4s forwards;
+  transition: 0.8s opacity;
 }
 
 .descriptionModal{
   overflow-y: auto;
-  max-height: 50vh;
+  max-height: 20vh;
   padding: 2%;
 }
 
