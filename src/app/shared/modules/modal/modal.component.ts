@@ -10,7 +10,8 @@ import { styleRoot } from '../../utils/style-utils';
 export class ModalComponent implements AfterViewInit {
   @Output() onRemoveBlur: EventEmitter<void> = new EventEmitter<void>();
   @Input() tittleModal: string = "Faça Login";
-  @Input() visibilidade: string = "visibilidade";
+  public visibilidade: string = "";
+
   public modal: HTMLElement;
 
   constructor(
@@ -18,27 +19,32 @@ export class ModalComponent implements AfterViewInit {
   ){}
 
   ngAfterViewInit(): void {
-
-    // styleRoot?.style.setProperty("--body-y","hidden");
-
-    this.modal = this.elementRef.nativeElement.querySelector(".modal");
-    setTimeout(() => {
-      this.modal.style.opacity = "1";
-    }, 1)
+    if(!this.visibilidade) return;
+    this.openModal();
   }
 
-  public setVisibilidade():void{
-    this.visibilidade = "";
+  public setVisibilidade(visibilidade:string):void{
+    this.visibilidade = visibilidade;
   }
 
   public removeBlur():void{
     this.onRemoveBlur.emit();
   }
 
-  public acceptTermo():void{
+  public openModal():void{
+    styleRoot?.style.setProperty("--body-y","hidden");
+    this.modal = this.elementRef.nativeElement.querySelector(".modal");
+    setTimeout(() => {
+      this.modal.style.opacity = "1";
+    }, 1);
+  }
+
+  public acceptTermo(visibilidade:string):void{
     this.modal.style.opacity = "0";
-    styleRoot?.style.setProperty("--body-y","none");
-    this.setVisibilidade();
     this.removeBlur();
+    styleRoot?.style.setProperty("--body-y","none");
+    setTimeout(() => {
+      this.setVisibilidade(visibilidade);
+    }, 1400)
   }
 }

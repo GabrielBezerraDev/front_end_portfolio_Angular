@@ -5,6 +5,7 @@ import { styleRoot, widthScreen } from 'src/app/shared/utils/style-utils';
 import { MasteryLevel } from '../Enum/mastery-level';
 import { ScreenUtils } from 'src/app/shared/utils/screen-utils';
 import { body } from 'src/app/shared/utils/document-utils';
+import { ModalComponent } from 'src/app/shared/modules/modal/modal.component';
 
 @Component({
   selector: 'app-page-home',
@@ -180,7 +181,7 @@ public competencias: Array<Competencias> =
   }
 ];
 
-@ViewChild('main') teste: ElementRef;
+@ViewChild(ModalComponent) modal: ModalComponent;
 public showCompetencia: Array<boolean> = [true, true, true, true, true, true, true];
 public levels: NodeListOf<HTMLElement>;
 public mastery: NodeListOf<HTMLElement>;
@@ -189,8 +190,8 @@ public coutClass: Array<number> = [0,0,0,0,0,0,0];
 public level: number = 0;
 public masteryLevels: Array<string> = Object.values(MasteryLevel);
 public styleSpan: string = "styleLegend";
-public visibilidadeModal = " ";
 public isAlreadyPage: boolean = false;
+public modalActived: boolean = false;
 
   constructor(
     private elementRef: ElementRef,
@@ -213,9 +214,13 @@ public disable():void{
 
 public navigateTo():void{
   if(!this.isAlreadyPage){
-    this.visibilidadeModal = "visibilidade";
-    this.addFilter();
-    return;
+    this.modalActived = true;
+    setTimeout(() => {
+      this.modal.setVisibilidade("visibilidade");
+      this.addFilter();
+      this.modal.openModal();
+      return;
+    }, 1);
   }
   this.onRouter.emit("pokedex");
 }
@@ -270,10 +275,13 @@ public animationBar(level: number, indexMain: number):void{
 
 public removeFilter():void{
   this.renderer.removeClass(this.elementRef.nativeElement.querySelector(".blurFilter"),"blurFilter");
+  setTimeout(() => {
+    this.modalActived = false;
+  }, 1400);
 }
 
 public addFilter():void{
-  this.renderer.addClass(this.elementRef.nativeElement.querySelector(".blurFilter"),"blurFilter");
+  this.renderer.addClass(this.elementRef.nativeElement.querySelector("main"),"blurFilter");
 }
 
 }

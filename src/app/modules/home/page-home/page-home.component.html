@@ -1,6 +1,6 @@
-<app-modal [visibilidade]="visibilidadeModal" (onRemoveBlur)="removeFilter()" [tittleModal]="'Desculpe, está página ainda não está pronta :('"></app-modal>
+<app-modal  *ngIf="modalActived" (onRemoveBlur)="removeFilter()" [tittleModal]="'Desculpe, está página ainda não está pronta :('"></app-modal>
 <main>
-  <div observer (notVisible)="showMenu()" (visible)="hiddenMenu()" class="video">
+  <div observer  (notVisible)="showMenu()" (visible)="hiddenMenu()" class="video">
     <video autoplay muted loop id="myVideo" class="header-gap">
       <source src="/assets/videos/retrowave.mp4" type="video/mp4">
     </video>
@@ -10,7 +10,7 @@
     </div>
   </div>
   <div class="main" #main>
-    <aside observer class="menu-page hidden-menu">
+    <aside  class="menu-page hidden-menu">
 
     </aside>
     <div class="content">
