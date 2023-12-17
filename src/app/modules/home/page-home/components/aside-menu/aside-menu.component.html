@@ -1,0 +1,17 @@
+<div class="containerMenu">
+  <div #menu class="menu">
+    <div class="icons-direction">
+      <i class="bi bi-person-badge-fill perfil"></i>
+      <app-hover-text [textBox]="'Perfil'"></app-hover-text>
+    </div>
+    <div class="icons-direction">
+      <i class="bi bi-clipboard-heart-fill competencia" (click)="transitionMenu(menu,'COMPETENCIAS')"></i>
+      <app-hover-text [textBox]="'Competências'"></app-hover-text>
+    </div>
+    <div class="icons-direction">
+      <i class="bi bi-person-fill-gear projetos" (click)="transitionMenu(menu,'PROJETOS')"></i>
+      <app-hover-text [textBox]="'Projetos'"></app-hover-text>
+    </div>
+  </div>
+  <app-options-competence [currentOptions]="currentOptions" class="test"></app-options-competence>
+</div>

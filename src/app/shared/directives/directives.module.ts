@@ -1,18 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Observer } from './intersection-observer';
+import { Observer } from './intersection-observer.directive';
+import { HoverElementsDirective } from './hover-elements.directive';
 
 
 
 @NgModule({
   declarations: [
-    Observer
+    Observer,
+    HoverElementsDirective
   ],
   imports: [
     CommonModule
   ],
   exports:
   [
+    HoverElementsDirective,
     Observer
   ]
 })

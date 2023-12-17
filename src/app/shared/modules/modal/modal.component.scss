@@ -8,8 +8,8 @@
 }
 
 .modal{
-  background-color: rgb(255, 255, 255);
   opacity: 0;
+  background-color: rgb(255, 255, 255);
   position: fixed;
   top: 12vh;
   left: 25vw;
@@ -20,10 +20,9 @@
   max-height: 90vh;
   color: #000000;
   overflow: hidden;
-  visibility: hidden;
   z-index: 1;
   animation: modalAnimation 1.4s forwards;
-  transition: 0.8s opacity;
+  transition: .3s opacity;
 }
 
 .descriptionModal{

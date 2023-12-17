@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { Observer } from './shared/directives/intersection-observer';
+import { Observer } from './shared/directives/intersection-observer.directive';
 
 @NgModule({
   declarations: [
@@ -14,7 +14,7 @@ import { Observer } from './shared/directives/intersection-observer';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

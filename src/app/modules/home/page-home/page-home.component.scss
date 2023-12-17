@@ -16,18 +16,42 @@
   }
 }
 
+// .menu{
+//   background-color: red;
+//   height: 100vh;
+//   width: 500vw;
+//   position: sticky;
+//   top: 0;
+// }
+
+// .test{
+//   background-color: blue;
+//   height: 10vh;
+// }
+
+.menu-aside{
+  position:sticky;
+  top: 0;
+  height: 100vh;
+  min-width: 10%;
+  flex-shrink: 0;
+  border-right: 3px var(--property-border);
+  border-top: 3px var(--property-border);
+  border-bottom: 3px var(--property-border);
+}
+
 main{
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
 }
+
 
 
 .profile{
   float: left;
   margin: 2%;
   width: 30%;
-  border: 1px solid #46026e;
+  border: var(--home-border);
   border-radius: 10px;
 }
 
@@ -37,6 +61,10 @@ main{
   align-items: center;
   justify-content: center;
   position: relative;
+}
+
+.content{
+  border-top: 3px var(--property-border);
 }
 
 video{
@@ -65,27 +93,28 @@ small{
 
 .main{
   background-color: #15011a;
-  display: block;
-  padding-bottom: 50px;
-  width: 100vw;
+  display: flex;
+  flex-grow: 1;
+  position: relative;
+  align-items: start;
 }
 
 .description{
     width: var(--width-format);
-    border: 1px solid #46026e;
+    border: var(--home-border);
     margin-top: 20px;
     padding: 2%;
 }
 
 .pokedex{
   width: calc(var(--width-format) - 40%);
-  border: 2px solid #46026e;
+  border: var(--home-border);
   border-radius: 15px;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0;
+  margin-bottom: var(--margin-bottom);
   flex-direction: column;
 }
 
@@ -109,7 +138,7 @@ small{
 
 .btnPoke{
   padding: 2%;
-  border: 1px solid #46026e;
+  border: var(--home-border);
   border-radius: 8px;
   font-size: 1em;
   cursor: pointer;

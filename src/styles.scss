@@ -42,6 +42,29 @@ input[type="checkbox"]{
   cursor: pointer;
 }
 
+.icons-direction{
+  display: flex;
+  flex-direction: column;
+  column-gap: 10px;
+  align-items: center;
+}
+
+.menu{
+  height: 100%;
+  width: 100%;
+  background-color: #260a36;
+  padding-top: calc(var(--header-height) + 30px);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  flex-shrink: 0;
+  transition: width 0.5s;
+}
+
+
+
+  // --teste: pink;
   --body-y: none;
   --width-format: 80%;
   --header-height: 10vh;

@@ -1,4 +1,4 @@
-export interface Mastery{
+export interface IMastery{
   iconSvg: string;
   level: number;
   tech: string;

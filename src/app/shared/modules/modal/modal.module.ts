@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ModalComponent } from './modal.component';
 import { AngularMaterialModule } from '../angular-material/angular-material.module';
+import { InProgressModule } from '../in-progress/in-progress.module';
 
 
 
@@ -11,7 +12,8 @@ import { AngularMaterialModule } from '../angular-material/angular-material.modu
   ],
   imports: [
     CommonModule,
-    AngularMaterialModule
+    AngularMaterialModule,
+    InProgressModule
   ],
   exports:[
     ModalComponent
