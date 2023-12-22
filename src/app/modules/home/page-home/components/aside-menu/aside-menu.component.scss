@@ -1,13 +1,21 @@
 
 
 .containerMenu{
-  height: 100%;
   display: flex;
-  overflow: hidden;
+  overflow: hidden auto;
+  flex-direction: column;
+  max-width: 30vw;
+  row-gap: 10px;
+  max-height: 100vh;
+  min-height: 100vh;
+  position: relative;
+  border-right: 3px var(--property-border);
+  background-color: #260a36;
+  padding: 20px;
+  padding-top: calc(var(--header-height) - 2px);
 }
 
-.test{
-  width: 100%;
+.subMenu{
   flex-shrink: 0;
 }
 
@@ -16,3 +24,25 @@
 p{
   font-size: 20px;
 }
+
+.subContainer{
+  display: flex;
+}
+
+.icons-direction{
+
+}
+
+.tittle{
+  position: sticky;
+  background-color: #260a36;
+  padding-top: 10px;
+  top: 0;
+}
+
+.return-main-menu{
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+}
+

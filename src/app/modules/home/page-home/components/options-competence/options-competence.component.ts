@@ -9,5 +9,4 @@ import { IOptionsMenu } from '../../../interfaces/Ioptions-menu';
 export class OptionsCompetenceComponent {
 
   @Input() currentOptions: Array<IOptionsMenu> = [];
-
 }

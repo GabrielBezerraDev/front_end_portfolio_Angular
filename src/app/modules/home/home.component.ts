@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TestingService } from 'src/app/services/testing.service';
+import { PageHomeComponent } from './page-home/page-home.component';
 
 @Component({
   selector: 'app-home',
@@ -10,6 +11,7 @@ import { TestingService } from 'src/app/services/testing.service';
 export class HomeComponent {
 
 public comprimento: string;
+@ViewChild(PageHomeComponent) pageHome: PageHomeComponent;
 
 constructor
 (
@@ -31,6 +33,10 @@ public getHelloWorld():void{
 
 public navigateTo(router: string):void{
   this.router.navigate([router],{relativeTo: this.route});
+}
+
+public openMenu():void{
+  this.pageHome.openMenu();
 }
 
 }

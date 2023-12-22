@@ -118,4 +118,9 @@ public addFilter():void{
   this.renderer.addClass(this.elementRef.nativeElement.querySelector("main"),"blurFilter");
 }
 
+public openMenu():void{
+  let menu = this.elementRef.nativeElement.querySelector(".menu-aside") as HTMLDivElement;
+  this.renderer.setStyle(menu,"left","0%");
+}
+
 }

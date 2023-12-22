@@ -1,17 +1,27 @@
 <div class="containerMenu">
-  <div #menu class="menu">
-    <div class="icons-direction">
-      <i class="bi bi-person-badge-fill perfil"></i>
-      <app-hover-text [textBox]="'Perfil'"></app-hover-text>
+  <div class="tittle" *ngIf="subMenuActived">
+    <div class="return-main-menu">
+      <i class="bi bi-arrow-left-circle-fill"></i>
+      <h6>{{tittle}}</h6>
     </div>
-    <div class="icons-direction">
-      <i class="bi bi-clipboard-heart-fill competencia" (click)="transitionMenu(menu,'COMPETENCIAS')"></i>
-      <app-hover-text [textBox]="'Competências'"></app-hover-text>
-    </div>
-    <div class="icons-direction">
-      <i class="bi bi-person-fill-gear projetos" (click)="transitionMenu(menu,'PROJETOS')"></i>
-      <app-hover-text [textBox]="'Projetos'"></app-hover-text>
-    </div>
+    <hr>
   </div>
-  <app-options-competence [currentOptions]="currentOptions" class="test"></app-options-competence>
+  <div class="subContainer">
+    <div #menu class="menu">
+
+      <div class="icons-direction">
+        <i class="bi bi-person-badge-fill perfil"></i>
+        <app-hover-text [textBox]="'Perfil'"></app-hover-text>
+      </div>
+      <div class="icons-direction">
+        <i class="bi bi-clipboard-heart-fill competencia" (click)="transitionMenu('COMPETENCIAS','Competências')"></i>
+        <app-hover-text [textBox]="'Competências'"></app-hover-text>
+      </div>
+      <div class="icons-direction">
+        <i class="bi bi-person-fill-gear projetos" (click)="transitionMenu('PROJETOS','Projetos')"></i>
+        <app-hover-text [textBox]="'Projetos'"></app-hover-text>
+      </div>
+    </div>
+    <app-options-competence [currentOptions]="currentOptions" class="subMenu"></app-options-competence>
+  </div>
 </div>
