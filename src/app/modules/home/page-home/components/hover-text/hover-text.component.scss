@@ -1,8 +1,11 @@
 .boxText{
   border: var(--home-border);
   padding: 5px;
-  font-size: 18px;
+  // font-size: calc(var(--font-size) - 50px);
+  // font-size: calc(var(--));
   border-radius: 5px;
   background-color: #15011a;
+  background-color: var(--test);
   font-weight: bolder;
 }
+

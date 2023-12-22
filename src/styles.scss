@@ -1,6 +1,17 @@
 :root{
 
-
+  --teste: rgb(99, 226, 67);
+  --body-y: none;
+  --width-format: 80%;
+  --header-height: 10vh;
+  --font-color: #ffffff;
+  --font-size: 1rem;
+  --type-text: justify;
+  font-size: var(--font-size);
+  color: var(--font-color);
+  font-family: sans-serif;
+  text-align: var(--type-text);
+  line-height: 1.5;
 
 .form-input{
   border-radius: 10px;
@@ -63,20 +74,10 @@ input[type="checkbox"]{
   overflow: hidden;
 }
 
-
-
-  // --teste: pink;
-  --body-y: none;
-  --width-format: 80%;
-  --header-height: 10vh;
-  --font-color: #ffffff;
-  --font-size: 1.8em;
-  --type-text: justify;
+p{
   font-size: var(--font-size);
-  color: var(--font-color);
-  font-family: sans-serif;
-  text-align: var(--type-text);
-  line-height: 1.5;
+}
+
 }
 
 *{
@@ -85,8 +86,10 @@ input[type="checkbox"]{
 }
 
 h1{
-  font-size: calc(var(--font-size) + 0.1em);
+  font-size: var(--font-size);
 }
+
+
 
 
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css");

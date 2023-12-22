@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
   title = 'Portifolio_Angular';
 
 ngOnInit(): void {
-    this.setStyle();
+    // this.setStyle();
 }
 
 
