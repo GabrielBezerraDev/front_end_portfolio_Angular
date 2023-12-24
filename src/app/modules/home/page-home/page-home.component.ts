@@ -7,6 +7,8 @@ import { ScreenUtils } from 'src/app/shared/utils/screen-utils';
 import { body } from 'src/app/shared/utils/document-utils';
 import { ModalComponent } from 'src/app/shared/modules/modal/modal.component';
 import { ECompetencia } from '../Enum/Ecompetencia';
+import { style } from '@angular/animations';
+
 
 @Component({
   selector: 'app-page-home',
@@ -27,6 +29,7 @@ public masteryLevels: Array<string> = Object.values(EMasteryLevel);
 public styleSpan: string = "styleLegend";
 public isAlreadyPage: boolean = false;
 public modalActived: boolean = false;
+public menuIsOpen: boolean = false;
 
   constructor(
     private ecompetencias: ECompetencia,
@@ -121,6 +124,15 @@ public addFilter():void{
 public openMenu():void{
   let menu = this.elementRef.nativeElement.querySelector(".menu-aside") as HTMLDivElement;
   this.renderer.setStyle(menu,"left","0%");
+  styleRoot.style.setProperty("--body-y","hidden");
+  this.menuIsOpen = true;
+}
+
+public closeMenu():void{
+  let menu = this.elementRef.nativeElement.querySelector(".menu-aside") as HTMLDivElement;
+  this.renderer.setStyle(menu,"left","-100%");
+  this.menuIsOpen = false;
+  styleRoot.style.setProperty("--body-y","none");
 }
 
 }

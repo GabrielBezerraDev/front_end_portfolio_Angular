@@ -7,6 +7,7 @@ export class ECompetencia{
     {
       titulo: "Front-End",
       estilo:"svg-img-front",
+      id: "front",
       maestrias:
       [
         {
@@ -38,6 +39,7 @@ export class ECompetencia{
     {
       titulo: "Back-End",
       estilo:"svg-img-back",
+      id: "back",
       maestrias:
       [
         {
@@ -63,6 +65,7 @@ export class ECompetencia{
     {
       titulo: "Versionamento",
       estilo:"versionamento",
+      id:"git",
       maestrias:
       [
         {
@@ -82,6 +85,7 @@ export class ECompetencia{
     {
       titulo: "Linguagens de Programação",
       estilo: "programming",
+      id: "lp",
       maestrias:
       [
         {
@@ -119,6 +123,7 @@ export class ECompetencia{
     {
       titulo: "Data base",
       estilo: "dataBase",
+      id:"db",
       maestrias:
       [
         {
@@ -138,6 +143,7 @@ export class ECompetencia{
     {
       titulo: "DevOps",
       estilo: "devOps",
+      id:"devOps",
       maestrias:
       [
         {
@@ -151,6 +157,7 @@ export class ECompetencia{
     {
       titulo: "Sistemas Operacionais",
       estilo: "sis",
+      id:"so",
       maestrias:
       [
         {

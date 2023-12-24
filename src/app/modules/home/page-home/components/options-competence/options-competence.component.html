@@ -1,6 +1,8 @@
-<div class="menu test">
-  <div class="icons-direction" *ngFor="let option of currentOptions">
+<div class="menu menu-direction">
+  <a *ngFor="let option of currentOptions" href="home#{{option.id}}">
+  <div class="icons-direction">
     <i class="{{option.icon}}"></i>
     <app-hover-text [textBox]="option.description"></app-hover-text>
   </div>
+</a>
 </div>

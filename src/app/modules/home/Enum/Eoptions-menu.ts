@@ -4,35 +4,43 @@ import { IOptionsMenu } from "../interfaces/Ioptions-menu";
 
 
 export class EOptionsMenu{
+  
   public readonly COMPETENCIAS: Array<IOptionsMenu> =
   [
     {
       icon: "bi bi-window-stack",
       description: "Front-end",
+      id: "front"
     },
     {
       icon: "bi bi-code-slash",
-      description: "Back-end"
+      description: "Back-end",
+      id: "back"
     },
     {
       icon:"bi bi-git",
-      description:"Versionamento"
+      description:"Versionamento",
+      id:"git"
     },
     {
       icon:"bi bi-journal-code",
-      description:"Linguagens de programação"
+      description:"Linguagens de programação",
+      id: "lp"
     },
     {
       icon:"bi bi-database",
-      description:"Data base"
+      description:"Data base",
+      id:"db"
     },
     {
       icon:"bi bi-boxes",
-      description:"DevOps"
+      description:"DevOps",
+      id:"devOps"
     },
     {
       icon:"bi bi-motherboard",
-      description:"Sistema Operacional"
+      description:"Sistema Operacional",
+      id:"so"
     }
   ]
 
@@ -40,7 +48,8 @@ export class EOptionsMenu{
   [
     {
       icon:"/assets/imgs/icon-pokebola.png",
-      description:"Pokedex"
+      description:"Pokedex",
+      id: "pokedex"
     }
   ]
 }

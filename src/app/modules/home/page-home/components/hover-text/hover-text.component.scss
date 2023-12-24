@@ -1,11 +1,15 @@
+p{
+  text-align: center;
+}
 .boxText{
   border: var(--home-border);
   padding: 5px;
   // font-size: calc(var(--font-size) - 50px);
   // font-size: calc(var(--));
   border-radius: 5px;
-  background-color: #15011a;
-  background-color: var(--test);
+  background-color: #391242;
+  border: 2px solid #581b66;
   font-weight: bolder;
 }
+
 

@@ -1,6 +1,6 @@
 *{
   --max-width-menu: 27vw;
-  --min-width-menu: none;
+  --min-width-menu: 27vw;
 }
 
 .containerMenu{
@@ -15,17 +15,18 @@
   position: relative;
   border-right: 3px var(--property-border);
   background-color: #260a36;
-  padding-top: calc(var(--header-height) - 3px);
+  // padding-top: calc(var(--header-height) - 3px);
 }
 
 .subMenu{
   flex-shrink: 0;
   width: 100%;
+  display: none;
 }
 
 .subContainer{
   display: flex;
-  padding: calc(var(--header-height) + 10px) 10px calc((var(--header-height)) + 10px) 10px;
+  padding: 30px 10px 30px 10px;
 }
 
 .icons-direction{
@@ -35,7 +36,6 @@
 .tittle{
   position: sticky;
   background-color: #411958;
-  padding-top: 10px;
   width: 100%;
   top: 0;
 }

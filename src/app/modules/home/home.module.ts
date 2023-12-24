@@ -11,6 +11,7 @@ import { HoverTextComponent } from './page-home/components/hover-text/hover-text
 import { OptionsCompetenceComponent } from './page-home/components/options-competence/options-competence.component';
 import { EOptionsMenu } from './Enum/Eoptions-menu';
 import { ECompetencia } from './Enum/Ecompetencia';
+import { FadeInModule } from 'src/app/shared/modules/fade-in/fade-in.module';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { ECompetencia } from './Enum/Ecompetencia';
     CommonModule,
     HomeRoutingModule,
     DirecivesModule,
-    ModalModule
+    ModalModule,
+    FadeInModule
   ],
   providers:
   [

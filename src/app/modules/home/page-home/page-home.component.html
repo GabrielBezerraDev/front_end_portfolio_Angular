@@ -1,4 +1,5 @@
 <app-modal  (onRemoveBlur)="removeFilter()"   [tittleModal]="'Desculpe, está página ainda não está pronta :('"></app-modal>
+<app-fade-in *ngIf="menuIsOpen"></app-fade-in>
 <main>
   <div observer (notVisible)="showMenu()" (visible)="hiddenMenu()" class="video">
     <video autoplay muted loop id="myVideo" class="header-gap">
@@ -14,22 +15,30 @@
 
     </aside> -->
     <div class="menu-aside">
-      <app-aside-menu></app-aside-menu>
+      <app-aside-menu (onCloseMenu)="closeMenu()"></app-aside-menu>
     </div>
     <div class="content">
       <div class="description">
         <img class="profile" src="/assets/imgs/Gabriel.jpeg">
         <h1>Sobre mim</h1>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto nostrum fugiat eos molestiae dolor architecto impedit dolorem tempora. Excepturi architecto deleniti est doloribus dignissimos obcaecati enim asperiores in dolor magni quo quos fuga saepe nulla, cumque nesciunt. Amet incidunt ducimus aliquid in consequuntur veniam ipsam tempore quod sequi laborum ipsa officia non aperiam nesciunt molestias obcaecati perferendis illum libero, vel eveniet molestiae ut? Perferendis officiis amet eum ipsum rerum qui ab repellat. Quasi cum sed deserunt iure porro quam magnam excepturi itaque blanditiis minus adipisci corporis possimus nihil, incidunt, aspernatur recusandae, aut distinctio beatae maiores suscipit doloremque ducimus omnis consectetur nam. Quidem adipisci beatae voluptas nihil libero quos laboriosam exercitationem. Possimus magnam quasi maiores corporis quaerat, deserunt consequatur ratione corrupti, saepe optio ipsa? Magni nihil quisquam quidem. Neque eum inventore voluptate dicta dolorum, tenetur fuga sequi quia architecto provident ipsam earum illum repellat explicabo voluptates sit quos labore nulla sapiente molestias ipsum! Vero dolore porro nihil quos odio inventore officiis laborum aliquid, facilis labore quam voluptates doloribus fugiat optio beatae amet velit, hic cum ullam sapiente dolores dicta a vel. Vel, aperiam consequuntur voluptas quibusdam facilis totam error quo quas! Explicabo ipsam non neque nobis doloremque quos quo velit voluptatem obcaecati vel, soluta pariatur numquam hic provident repellat ullam? Temporibus perspiciatis atque autem odio perferendis, incidunt ratione, expedita nesciunt eum voluptas quos. Ab tenetur odit perspiciatis fugit ea ipsam nobis porro laudantium corrupti deserunt. Quod quibusdam, dolorum labore quidem nam voluptatibus dolor architecto in, magni eum aspernatur modi perspiciatis adipisci consectetur iure voluptatum soluta minus eaque! Deserunt consequatur itaque laboriosam atque porro voluptate, eos ipsum, sint magnam accusamus repudiandae similique aliquam saepe pariatur ea aliquid? Autem aliquid quibusdam nesciunt sequi maiores, fugiat et, numquam nisi tenetur eligendi voluptatibus animi cumque distinctio veritatis quod consectetur dolorem illo in nostrum odio id? Consectetur illum fugit iste laudantium autem esse suscipit quae odit recusandae officia doloremque alias vitae eveniet laborum incidunt perferendis totam sed dicta provident deserunt velit temporibus, nobis ut? Ad iusto quasi sapiente possimus sint culpa necessitatibus totam sequi similique laboriosam repudiandae minima, eaque amet veniam labore dolor numquam tempore quisquam debitis velit facere. Explicabo nobis animi quisquam quae adipisci sunt, distinctio officia repellendus ratione vel sapiente. Temporibus, excepturi nam! Animi, delectus nam amet sequi necessitatibus cumque praesentium temporibus mollitia adipisci consequuntur itaque provident nemo fugit accusamus ut, obcaecati, reprehenderit aliquid reiciendis. Porro, recusandae voluptatibus placeat soluta accusamus mollitia at laudantium exercitationem libero nemo. Expedita totam consectetur eos aliquam facilis doloremque fugit ullam facere eligendi incidunt at distinctio quisquam commodi cumque recusandae suscipit dolores ut, praesentium pariatur vitae numquam assumenda mollitia. Aperiam obcaecati fugit repudiandae eos, totam praesentium aut, animi ullam commodi, soluta ipsam blanditiis asperiores accusantium deserunt. Quod repellendus molestias error adipisci animi unde delectus, rerum illum ipsa, omnis blanditiis! Voluptatum, unde. Et, magnam exercitationem? Aliquam rerum architecto sunt nostrum harum dolorem optio magnam voluptates voluptatum quo, dolores sapiente quae suscipit non laborum, minima sequi obcaecati accusamus ut rem maxime, corporis excepturi distinctio. Commodi perspiciatis voluptates unde ipsum quia harum velit maiores, porro ab impedit reprehenderit, suscipit aspernatur? Id, minus omnis! Tenetur commodi ullam beatae odit eos quod! Est, nobis? Hic natus ipsum molestias sint, porro quis iusto magnam! Dolore, consequuntur ipsum quis, asperiores amet minus assumenda facilis cumque qui minima pariatur, fuga aut iusto. Consectetur dolor, nulla explicabo cum porro quasi quis minima fugit perferendis numquam. Ipsum tempora modi animi at porro! Aut laboriosam laudantium sapiente quas aliquid. Dignissimos quis nam assumenda in molestias? Labore fugit minima aperiam. At, hic animi blanditiis quasi unde exercitationem quibusdam et nisi. Repellendus rem ea est fugiat veritatis adipisci dolor fugit labore incidunt, rerum officia quaerat expedita dolore quidem vero, omnis vel quam earum voluptates mollitia autem necessitatibus consectetur laborum! Ut veritatis aut eum necessitatibus beatae omnis, facilis doloremque harum reiciendis, illum ipsum nihil assumenda sed corrupti consectetur consequatur ab quasi amet pariatur perferendis itaque eligendi quam tempore! Molestiae dolorum similique ea nobis facilis porro eius natus id quisquam sed necessitatibus hic eveniet nihil earum magni, quasi aliquam dolores eum veniam totam saepe incidunt et. Laborum et a inventore animi autem. Labore veritatis eum culpa eos enim tempore id aperiam suscipit at impedit dolorem aliquam, commodi sed provident. Eos quam fuga rem, sunt natus dolor vitae. Ullam temporibus sequi eius ducimus inventore aliquid dolore, porro perferendis totam nesciunt eaque quibusdam deleniti cumque atque, magnam quae, consequuntur voluptas iste neque quaerat esse eos saepe eveniet? Id commodi ipsam architecto soluta laboriosam voluptas non nostrum eos culpa qui consectetur, dolore autem eligendi aspernatur ex repellendus, reiciendis odio quo sit voluptatibus placeat! Eos rerum natus perspiciatis, autem omnis quas quidem fuga velit in corporis. Beatae fugit eligendi deleniti corrupti deserunt, nostrum aspernatur velit voluptatibus voluptate, consequuntur a voluptas, commodi eveniet aliquid facere ducimus! Esse quia quo qui error dolores cupiditate odit veritatis necessitatibus itaque expedita architecto ut consequuntur, culpa voluptates obcaecati sapiente maxime iusto velit. Libero quidem quaerat molestiae distinctio asperiores labore vero dolores, dolor rem dolorem iusto sit harum consequuntur voluptatum repellat est excepturi enim neque animi commodi. Reprehenderit id ipsa nostrum vero numquam quae labore molestias tempora, repellat exercitationem voluptatum illo quo. Quo fugit odit veritatis expedita, voluptatem vel qui. Sunt rem inventore, illo, voluptas molestias numquam, repudiandae tenetur laudantium blanditiis ipsum cupiditate amet earum. Quasi modi in ab quis reprehenderit consequatur dicta eos. Obcaecati tenetur non animi laudantium neque itaque rerum alias eaque porro repellendus quaerat, placeat dicta excepturi. Suscipit ab voluptatem inventore. Quisquam maxime in animi dolores deserunt? Est incidunt veniam voluptatem in libero fugiat quod ea eligendi iure harum molestiae, iusto, dolor aspernatur nemo porro nobis perspiciatis eaque tenetur corrupti, similique ipsa laborum quibusdam? Sed possimus tempora dolorem sapiente omnis culpa porro alias cum impedit modi, mollitia, temporibus eum quos hic totam in ea magni odit fuga perspiciatis amet corrupti. Neque porro doloribus possimus, architecto libero cumque. Laboriosam, doloremque inventore! Ipsum perspiciatis optio sunt, voluptatibus neque consectetur architecto laudantium adipisci voluptate, numquam mollitia error nam dicta, quasi inventore facilis? Illo cupiditate laudantium corrupti quo debitis perspiciatis facilis assumenda minus dolor dicta.
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione tempore obcaecati, ex neque rerum reprehenderit eum doloribus reiciendis ut
+          explicabo impedit, nostrum illum nemo? Nobis quia necessitatibus quod laudantium dignissimos quis deleniti accusamus fuga delectus. Dolor asperiores velit repellat
+          blanditiis eligendi quod exercitationem dignissimos odit rerum quos nulla dolores sed, fugiat et numquam quasi modi fuga ea minus optio, in illo quo? Labore recusandae
+          cumque animi fuga, quia magnam aliquid saepe alias in nulla dolores, voluptas hic nostrum esse. Perferendis ipsa atque voluptatibus cum cupiditate ipsam minus dolore
+          sunt reiciendis quae accusantium debitis, fuga commodi quo eius? Expedita voluptas magnam doloremque voluptatum nostrum necessitatibus inventore. Saepe beatae soluta
+          sed asperiores debitis, laboriosam molestiae eveniet harum sequi blanditiis officiis cum aspernatur rem dolores. Accusantium, culpa, assumenda nam nemo hic quam quas
+          ipsa sed ducimus voluptas explicabo et corrupti nobis facilis vel laboriosam. Aliquam consectetur dolor optio placeat tempore perferendis magnam nostrum laboriosam!
+        </p>
     </div>
 
       <h1>Competências:</h1>
 
       <div *ngFor="let competencia of competencias; let indexMain = index" class="description">
         <div class="icons">
-          <h2>{{competencia.titulo}}:</h2>
+          <h2 id="{{competencia.id}}">{{competencia.titulo}}:</h2>
           <div class="{{competencia.estilo}}">
-            <img  *ngFor="let icon of competencia.maestrias; let indexTech = index" class="svg" src="{{icon.iconSvg}}" (click)="selectedTech(indexTech, indexMain, icon.level, icon.tech, icon.resumo)">
+            <img  *ngFor="let icon of competencia.maestrias; let indexTech = index" class="svg selected" src="{{icon.iconSvg}}" (click)="selectedTech(indexTech, indexMain, icon.level, icon.tech, icon.resumo)">
           </div>
           <div *ngIf="showCompetencia[indexMain]" class="mastery">
             <div class="mastery-bar">
@@ -50,16 +59,22 @@
         </div>
       </div>
 
-      <h1 class="text-width">Projetos:</h1>
-      <p class="text-width">Nessa seção vamos dá uma olhada para alguns projetos: </p>
-      <h1 class="text-width">Pokedex:</h1>
-      <div class="pokedex">
-        <img src="/assets/gifs/pokebola.gif" width="100%">
-        <div class="descriptionPoke">
-          Escolha os seus pokemons preferidos e se torne um verdadeiro treinador porkemon
+      <div class="section-projects">
+        <div class="tittle-project">
+          <h1 class="text-width">Projetos:</h1>
+          <p class="text-width">Nessa seção vamos dá uma olhada em alguns projetos: </p>
         </div>
-        <div class="divBtn">
-          <button class="btnPoke" (click)="navigateTo()">Ir para Pokedex </button>
+        <h1 class="text-width">Pokedex:</h1>
+        <div class="pokedex-card">
+          <div class="pokedex">
+            <img src="/assets/gifs/pokebola.gif" width="100%">
+            <div class="descriptionPoke">
+              <p>Escolha os seus pokemons preferidos e se torne um verdadeiro treinador porkemon</p>
+            </div>
+            <div class="divBtn">
+              <button class="btnPoke" (click)="navigateTo()">Ir para Pokedex </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>

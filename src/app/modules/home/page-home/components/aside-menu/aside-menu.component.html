@@ -1,7 +1,7 @@
 <div class="containerMenu">
-  <div class="tittle" *ngIf="subMenuActived">
+  <div class="tittle">
     <div class="return-main-menu">
-      <i class="bi bi-arrow-left-circle-fill"></i>
+      <i class="{{classIcon}}" (click)="executeFunction(currentFunction)"></i>
       <h6>{{tittle}}</h6>
     </div>
     <hr>
@@ -9,16 +9,16 @@
   <div class="subContainer">
     <div #menu class="menu">
 
-      <div class="icons-direction">
+      <div class="icons-direction cursor-pointer">
         <i class="bi bi-person-badge-fill perfil"></i>
         <app-hover-text [textBox]="'Perfil'"></app-hover-text>
       </div>
-      <div class="icons-direction">
-        <i class="bi bi-clipboard-heart-fill competencia" (click)="transitionMenu('COMPETENCIAS','Competências')"></i>
+      <div class="icons-direction cursor-pointer" (click)="transitionMenu('COMPETENCIAS','Competências', 'bi bi-arrow-left-circle-fill')">
+        <i class="bi bi-clipboard-heart-fill competencia"></i>
         <app-hover-text [textBox]="'Competências'"></app-hover-text>
       </div>
-      <div class="icons-direction">
-        <i class="bi bi-person-fill-gear projetos" (click)="transitionMenu('PROJETOS','Projetos')"></i>
+      <div class="icons-direction cursor-pointer" (click)="transitionMenu('PROJETOS','Projetos', 'bi bi-arrow-left-circle-fill')">
+        <i class="bi bi-person-fill-gear projetos"></i>
         <app-hover-text [textBox]="'Projetos'"></app-hover-text>
       </div>
     </div>
