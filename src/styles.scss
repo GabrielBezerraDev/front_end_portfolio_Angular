@@ -1,10 +1,15 @@
 :root{
+
+  --left-modal: 20vw;
+  --width-modal: 60vw;
+  --icons-size: 50px;
   --body-y: none;
   --width-format: 80%;
   --header-height: 10vh;
   --font-color: #ffffff;
   --font-size: 1.8rem;
   --type-text: justify;
+  --alert-width: 30%;
   scroll-behavior: smooth;
   font-size: var(--font-size);
   color: var(--font-color);
@@ -130,6 +135,7 @@ h2{
 @media (max-width: 960px){
   *{
   --font-size: 1.1rem !important;
+  --icons-size: 40px;
   }
 
   p{
@@ -141,6 +147,7 @@ h2{
 @media (max-width: 768px){
   *{
   --font-size: 0.8rem;
+  --icons-size: 30px;
   }
 
 
@@ -148,6 +155,12 @@ h2{
 }
 
 @media (max-width: 539px){
+  *{
+  --icons-size: 20px;
+  --width-modal: 80vw;
+  --left-modal: 11vw;
+  --alert-width: 50%;
+  }
 
   h1{
     font-size:  calc(var(--font-size) - 0.01rem);
@@ -163,6 +176,11 @@ h2{
 }
 
 @media (max-width:386px){
+
+  *{
+    --icons-size: 15px;
+    }
+
   h2{
     font-size:  calc(var(--font-size) - 0.2rem);
   }

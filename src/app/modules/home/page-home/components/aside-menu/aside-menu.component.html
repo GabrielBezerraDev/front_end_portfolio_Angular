@@ -9,7 +9,7 @@
   <div class="subContainer">
     <div #menu class="menu">
 
-      <div class="icons-direction cursor-pointer">
+      <div class="icons-direction cursor-pointer" (click)="transitionMenu('PERFIL','Perfil', 'bi bi-arrow-left-circle-fill')">
         <i class="bi bi-person-badge-fill perfil"></i>
         <app-hover-text [textBox]="'Perfil'"></app-hover-text>
       </div>
@@ -17,10 +17,10 @@
         <i class="bi bi-clipboard-heart-fill competencia"></i>
         <app-hover-text [textBox]="'Competências'"></app-hover-text>
       </div>
-      <div class="icons-direction cursor-pointer" (click)="transitionMenu('PROJETOS','Projetos', 'bi bi-arrow-left-circle-fill')">
+      <!-- <div class="icons-direction cursor-pointer" (click)="transitionMenu('PROJETOS','Projetos', 'bi bi-arrow-left-circle-fill')">
         <i class="bi bi-person-fill-gear projetos"></i>
         <app-hover-text [textBox]="'Projetos'"></app-hover-text>
-      </div>
+      </div> -->
     </div>
     <app-options-competence [currentOptions]="currentOptions" class="subMenu"></app-options-competence>
   </div>

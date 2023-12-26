@@ -4,7 +4,41 @@ import { IOptionsMenu } from "../interfaces/Ioptions-menu";
 
 
 export class EOptionsMenu{
-  
+
+  public readonly PERFIL: Array<IOptionsMenu> =
+  [
+    {
+      icon:"bi bi-person-vcard-fill",
+      description:"Sobre mim",
+      id: "aboutMe"
+    },
+    {
+      icon:"bi bi-clipboard2-check-fill",
+      description:"Experiência",
+      id: "experience"
+    },
+    {
+      icon:"bi bi-book-half",
+      description:"Formação",
+      id: "formation"
+    },
+    {
+      icon:"bi bi-journal-text",
+      description:"Estudos complementares",
+      id: "studies"
+    },
+    {
+      icon:"bi bi-globe-americas",
+      description:"Línguas",
+      id: "languages"
+    },
+    {
+      icon:"bi bi-globe",
+      description:"Redes sociais",
+      id: "socialMedia"
+    }
+  ]
+
   public readonly COMPETENCIAS: Array<IOptionsMenu> =
   [
     {

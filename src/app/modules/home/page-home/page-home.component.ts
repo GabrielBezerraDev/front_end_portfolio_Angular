@@ -30,6 +30,7 @@ public styleSpan: string = "styleLegend";
 public isAlreadyPage: boolean = false;
 public modalActived: boolean = false;
 public menuIsOpen: boolean = false;
+public isClicked: boolean = false;
 
   constructor(
     private ecompetencias: ECompetencia,
@@ -74,6 +75,7 @@ public showMenu():void{
 
 public selectedTech(indexTech:number, indexMain: number, level: number, tech: string, resumo?: string):void{
   this.showCompetencia[indexMain] = true;
+  this.isClicked = true;
   setTimeout(() => {
     console.log(this.mastery);
     this.levels = this.mastery[indexMain].querySelectorAll(".mastery-level");

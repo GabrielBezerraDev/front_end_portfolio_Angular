@@ -1,24 +1,25 @@
 <!-- <div class="modal" [ngClass]="visibilidade"> -->
 <div class="modal">
-  <h1>{{modalbody.tittle}}</h1>
-  <hr>
+  <div>
+    <h3 class="tittleModal">{{modalbody.tittle}}</h3>
+    <hr>
+  </div>
   <div class="mainModal">
-    <div class="descriptionModal">
+    <!-- <div class="descriptionModal">
       {{modalbody.contentBody}}
-    </div>
+    </div> -->
+    <img src="/assets/imgs/alerta.png">
   </div>
   <div class="termos">
-    <p>Eu concordo com os termos</p>
-    <input type="checkbox">
+    <p>Logo logo estará prontinho! por favor volte mais tarde :)</p>
   </div>
   <div class="divBtn">
     <button (click)="closeModal()">
-      <p>Concordo</p>
-      <mat-icon aria-hidden="false"  fontIcon="thumb_up"></mat-icon>
+      <p>Okay</p>
     </button>
-    <button>
+    <!-- <button>
       <p>Não concordo</p>
       <mat-icon  aria-hidden="false"  fontIcon="thumb_down"></mat-icon>
-    </button>
+    </button> -->
   </div>
 </div>
