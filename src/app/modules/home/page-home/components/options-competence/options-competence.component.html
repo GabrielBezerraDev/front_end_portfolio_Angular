@@ -1,8 +1,12 @@
-<div class="menu menu-direction">
+<div class="menu menu-direction" clicked>
   <a *ngFor="let option of currentOptions" href="home#{{option.id}}">
-  <div class="icons-direction">
-    <i class="{{option.icon}}"></i>
-    <app-hover-text [textBox]="option.description"></app-hover-text>
+  <div class="icons-direction subMenuOption">
+    <i class="{{option.icon}} subMenuOption"></i>
+    <div class="subMenuOption">
+      <div class="boxText subMenuOption">
+        <p class="subMenuOption">{{option.description}}</p>
+      </div>
+    </div>
   </div>
 </a>
 </div>

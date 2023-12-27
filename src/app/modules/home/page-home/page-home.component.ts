@@ -1,4 +1,4 @@
-import { Component, ElementRef, Renderer2, OnInit, Output, EventEmitter, ViewChild, ViewChildren, Query, QueryList, AfterContentInit, AfterViewInit, AfterViewChecked} from '@angular/core';
+import { Component, ElementRef, Renderer2, OnInit, Output, EventEmitter, ViewChild, ViewChildren, Query, QueryList, AfterContentInit, AfterViewInit, AfterViewChecked, Input} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ICompetencias } from '../interfaces/Icompetencias';
 import { styleRoot, widthScreen } from 'src/app/shared/utils/style-utils';
@@ -17,6 +17,7 @@ import { style } from '@angular/animations';
 })
 export class PageHomeComponent implements AfterViewInit {
 @Output() onRouter: EventEmitter<string> = new EventEmitter<string>();
+@Input() isMenuMobile: boolean;
 @ViewChild(ModalComponent) modal: ModalComponent;
 public competencias:Array<ICompetencias> = [];
 public showCompetencia: Array<boolean> = [true, true, true, true, true, true, true];
@@ -135,6 +136,10 @@ public closeMenu():void{
   this.renderer.setStyle(menu,"left","-100%");
   this.menuIsOpen = false;
   styleRoot.style.setProperty("--body-y","none");
+}
+
+public menuMobile():void{
+  if(this.isMenuMobile) this.closeMenu();
 }
 
 }

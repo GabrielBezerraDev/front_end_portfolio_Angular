@@ -12,6 +12,7 @@ import { OptionsCompetenceComponent } from './page-home/components/options-compe
 import { EOptionsMenu } from './Enum/Eoptions-menu';
 import { ECompetencia } from './Enum/Ecompetencia';
 import { FadeInModule } from 'src/app/shared/modules/fade-in/fade-in.module';
+import { ScreenUtils } from 'src/app/shared/utils/screen-utils';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { FadeInModule } from 'src/app/shared/modules/fade-in/fade-in.module';
   providers:
   [
     EOptionsMenu,
-    ECompetencia
+    ECompetencia,
+    ScreenUtils
   ]
 })
 export class HomeModule { }

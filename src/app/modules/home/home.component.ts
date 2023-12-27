@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TestingService } from 'src/app/services/testing.service';
 import { PageHomeComponent } from './page-home/page-home.component';
+import { ScreenUtils } from 'src/app/shared/utils/screen-utils';
 
 @Component({
   selector: 'app-home',
@@ -12,14 +13,21 @@ export class HomeComponent {
 
 public comprimento: string;
 @ViewChild(PageHomeComponent) pageHome: PageHomeComponent;
+public isMenuMobile: boolean = false;
 
 constructor
 (
   private testing: TestingService,
   private router: Router,
-  private route: ActivatedRoute
+  private route: ActivatedRoute,
+  private screenUtils: ScreenUtils
 ){
   this.getHelloWorld();
+  this.typeMenu();
+}
+
+private typeMenu():void{
+  if(this.screenUtils.getWidthScreen() <= 650) this.isMenuMobile = true;
 }
 
 public getHelloWorld():void{
@@ -37,6 +45,10 @@ public navigateTo(router: string):void{
 
 public openMenu():void{
   this.pageHome.openMenu();
+}
+
+public menuMobile(element:HTMLElement):void{
+  if(element.classList.contains("subMenuOption")) this.pageHome.menuMobile();
 }
 
 }

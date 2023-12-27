@@ -1,2 +1,2 @@
-<app-header (onOpenMenu)="openMenu()"></app-header>
-<app-page-home></app-page-home>
+<app-header (onOpenMenu)="openMenu()" ></app-header>
+<app-page-home  clicked (onClicked)="menuMobile($event)" [isMenuMobile]="isMenuMobile"></app-page-home>
