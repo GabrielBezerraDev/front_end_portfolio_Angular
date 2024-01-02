@@ -1,5 +1,5 @@
 import { Component, Input, ViewChild } from '@angular/core';
-import { IOptionsMenu } from '../../../interfaces/Ioptions-menu';
+import { IOptionsMenu } from '../../interfaces/Ioptions-menu';
 
 @Component({
   selector: 'app-options-competence',

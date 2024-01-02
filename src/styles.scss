@@ -9,6 +9,7 @@
   --font-color: #ffffff;
   --font-size: 1.8rem;
   --type-text: justify;
+  --background-purple: #15011a;
   --alert-width: 30%;
   scroll-behavior: smooth;
   font-size: var(--font-size);
@@ -21,6 +22,19 @@
   border-radius: 10px;
   border: 1px solid #423b3b;
   padding: 5px;
+}
+
+.button-theme{
+  font-size: var(--font-size);
+  background-color: #46026e;
+  border: 2px solid #b168db !important;
+  text-shadow: 1px 1px #b168db;
+  font-weight: bold;
+  color: #ffffff;
+  padding: 2%;
+  border: var(--home-border);
+  border-radius: 8px;
+  font-size: 1em;
 }
 
 

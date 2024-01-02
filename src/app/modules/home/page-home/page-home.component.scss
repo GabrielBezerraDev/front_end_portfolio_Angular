@@ -132,14 +132,7 @@ video{
   flex-direction: column;
 }
 
-button{
-  font-size: var(--font-size);
-  background-color: #46026e;
-  border: 2px solid #b168db !important;
-  text-shadow: 1px 1px #b168db;
-  font-weight: bold;
-  color: #ffffff;
-}
+
 
 // .brief h1{
 //   font-size: var(--font-size);
@@ -151,7 +144,7 @@ small{
 }
 
 .main{
-  background-color: #15011a;
+  background-color: var(--background-purple);
   display: flex;
   flex-grow: 1;
   position: relative;
@@ -202,14 +195,6 @@ small{
 
 .btn-df:hover{
   background-color: white;
-}
-
-.btnPoke{
-  padding: 2%;
-  border: var(--home-border);
-  border-radius: 8px;
-  font-size: 1em;
-  cursor: pointer;
 }
 
 .img-pokeball{
@@ -351,7 +336,7 @@ animation: indicator 1.2s infinite;}
   height: 80vh;
   width: 5vw;
   flex-shrink: 0;
-  background-color: #15011a;
+  background-color: var(--background-purple);
   border-right: 1px solid #b168db;
   border-bottom: 1px solid #b168db;
   border-top: 1px solid #b168db;

@@ -1,0 +1,16 @@
+.game{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.body-game{
+  height: 80%;
+  background-color: rgba(170, 112, 167, 0.548);
+  padding: 20px;
+}
+
+.header-game, .footer-game{
+  height: 10%;
+  background-color: rgba(131, 40, 126, 0.548);
+}

@@ -1,7 +1,7 @@
 import { Component, Inject, ElementRef, OnInit, Renderer2, AfterViewInit, Output, EventEmitter } from '@angular/core';
-import { IOptionsMenu } from '../../../interfaces/Ioptions-menu';
-import { EOptionsMenu } from '../../../Enum/Eoptions-menu';
-import { IFunc } from '../../../interfaces/Ifunc';
+import { IOptionsMenu } from '../../interfaces/Ioptions-menu';
+import { EOptionsMenu } from '../../Enum/Eoptions-menu';
+import { IFunc } from '../../interfaces/Ifunc';
 
 @Component({
   selector: 'app-aside-menu',

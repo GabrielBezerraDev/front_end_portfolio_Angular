@@ -1,0 +1,29 @@
+*{
+  --background-catalog-card: #37163f;
+}
+
+.card-catalog{
+  height: 600px;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: var(--background-catalog-card);
+  display: flex;
+  flex-direction: column;
+}
+
+.redirect{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10%;
+}
+
+.description-game{
+  height: 55%;
+}
+
+img{
+  height: 35%;
+}
+
+

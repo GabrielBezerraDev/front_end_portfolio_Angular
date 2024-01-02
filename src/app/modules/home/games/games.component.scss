@@ -1,0 +1,36 @@
+
+*{
+  --grid-template-columns: repeat(3, 1fr)
+}
+
+.catalog{
+  display: grid;
+  grid-template-columns: var(--grid-template-columns);
+  gap: 30px;
+  padding: 30px;
+  box-sizing: border-box;
+  background-color: var(--background-purple);
+}
+
+
+@media (min-width:2400px){
+  *{
+    --grid-template-columns: repeat(4, 1fr)
+  }
+}
+
+@media (max-width:1500px){
+  *{
+    --grid-template-columns: repeat(2, 1fr)
+  }
+}
+
+@media (max-width:750px){
+  *{
+    --grid-template-columns: repeat(1, 1fr)
+  }
+}
+
+// app-card-catalog{
+//   min-width: 30%;
+// }
