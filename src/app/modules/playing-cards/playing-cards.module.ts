@@ -3,18 +3,20 @@ import { CommonModule } from '@angular/common';
 
 import { PlayingCardsRoutingModule } from './playing-cards-routing.module';
 import { PlayingCardsComponent } from './playing-cards.component';
-import { CardComponent } from './components/card/card.component';
+import { ScrenMainComponent } from './components/scren-main/scren-main.component';
+import { DirecivesModule } from 'src/app/shared/directives/directives.module';
 
 
 @NgModule({
   declarations:
   [
     PlayingCardsComponent,
-    CardComponent
+    ScrenMainComponent
   ],
   imports: [
     CommonModule,
-    PlayingCardsRoutingModule
+    PlayingCardsRoutingModule,
+    DirecivesModule
   ]
 })
 export class PlayingCardsModule { }

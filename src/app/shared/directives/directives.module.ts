@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { Observer } from './intersection-observer.directive';
 import { HoverElementsDirective } from './hover-elements.directive';
 import { ClickedDirective } from './clicked.directive';
+import { DragElementsDirective } from './drag-elements.directive';
+
 
 
 
@@ -10,7 +12,8 @@ import { ClickedDirective } from './clicked.directive';
   declarations: [
     Observer,
     HoverElementsDirective,
-    ClickedDirective
+    ClickedDirective,
+    DragElementsDirective
    ],
   imports: [
     CommonModule
@@ -19,7 +22,8 @@ import { ClickedDirective } from './clicked.directive';
   [
     HoverElementsDirective,
     Observer,
-    ClickedDirective
+    ClickedDirective,
+    DragElementsDirective
   ]
 })
 export class DirecivesModule { }

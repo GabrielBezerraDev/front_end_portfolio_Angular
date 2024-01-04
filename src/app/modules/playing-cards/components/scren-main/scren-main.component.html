@@ -1,0 +1,11 @@
+<div class="game">
+  <div class="header-game"></div>
+  <div class="body-game">
+    <img  appDragElements class="card-one deck-one" src="{{deckOne[deckOneIndex]}}" draggable="true">
+    <img appDragElements *ngIf="deckOne[deckOneIndex+1]" class="card-two deck-one" src="{{deckOne[deckOneIndex+1]}}" draggable="true">
+    <img appDragElements class="card-three deck-two" src="{{deckTwo[deckTwoIndex]}}" draggable="true">
+    <img appDragElements *ngIf="deckOne[deckTwoIndex+1]" class="card-for deck-two" src="{{deckTwo[deckTwoIndex]}}" draggable="true">
+  </div>
+  <div class="footer-game"></div>
+</div>
+
