@@ -1,0 +1,20 @@
+<div class="modal-karban">
+  <h1>Configuração</h1>
+  <hr>
+  <div class="set-configuration">
+  <form [formGroup]="formGroup">
+    <div>
+      <h3>Quantidade de etapas</h3>
+      <input (input)="stagesAmount()" formControlName="stagesAmount" type="text">
+    </div>
+    <div>
+      <h3>Selecione o nome</h3>
+      <button (click)="addStageName(name.value)">Adicionar</button>
+      <input #name type="text">
+    </div>
+  </form>
+  </div>
+  <div class="footer-modal-karban">
+    <button (click)="createKarban()">Pronto</button>
+  </div>
+</div>

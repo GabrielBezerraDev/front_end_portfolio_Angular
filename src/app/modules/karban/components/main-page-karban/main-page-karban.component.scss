@@ -1,0 +1,16 @@
+main{
+  margin-top: var(--header-height);
+  height: calc(100vh - var(--header-height));
+  width: 100vw;
+  background-color: rgb(238, 216, 238);
+  overflow-x: auto;
+  overflow-y: none;
+  display: flex;
+  position: relative;
+}
+
+app-stages-karban{
+  height: 100%;
+  width: 100%;
+}
+
