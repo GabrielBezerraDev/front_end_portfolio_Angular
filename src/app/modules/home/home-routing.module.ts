@@ -24,6 +24,10 @@ const routes: Routes = [
   {
     path:"games",
     component: GamesComponent
+  },
+  {
+    path: "karban",
+    loadChildren: () => import("../karban/karban.module").then( m => m.KarbanModule)
   }
 ];
 

@@ -1,4 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
+import { StagesKarbanComponent } from '../stages-karban/stages-karban.component';
+import { ICardStage } from '../../interfaces/ICardStage';
+import { ConfigurationCardKarbanComponent } from '../configuration-card-karban/configuration-card-karban.component';
+import { ConfigurationKarbanComponent } from '../configuration-karban/configuration-karban.component';
 
 @Component({
   selector: 'app-main-page-karban',
@@ -7,10 +11,22 @@ import { Component, Input } from '@angular/core';
 })
 export class MainPageKarbanComponent {
 
+  @ViewChild(StagesKarbanComponent) stages: StagesKarbanComponent;
+  @ViewChild(ConfigurationKarbanComponent) configuration: ConfigurationKarbanComponent;
+
 public karbanStages: Array<string> = [];
 
 public setKarbanStages(stages: Array<string>):void{
   this.karbanStages = stages;
+  this.stages.setStagesKarban(this.karbanStages);
+}
+
+public setCard(card: ICardStage):void{
+  this.stages.setCardValue(card);
+}
+
+public activedOptionsCard(value:boolean):void{
+  this.configuration.optionsCard = value;
 }
 
 }

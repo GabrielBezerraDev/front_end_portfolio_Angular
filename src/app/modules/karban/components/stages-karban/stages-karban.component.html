@@ -1,9 +1,14 @@
 <div class="pane">
-  <div *ngFor="let stages of karbanStages" class="stage">
+  <div *ngFor="let stages of karbanStages; let i = index" class="stage">
     <h2>{{stages}}</h2>
     <hr>
     <div class="options-stage">
-
+      <i (click)="addCard(stages)" class="bi bi-plus-lg"></i>
+    </div>
+    <div class="card-board">
+      <div *ngIf="valuesBoard[i]" class="cards">
+        <app-card-karban [currentStage]="card.stageCard" [tittleCard]="card.tittleCard" [descriptionCard]="card.descriptionCard"  *ngFor="let card of board[stages]"></app-card-karban>
+      </div>
     </div>
   </div>
 </div>

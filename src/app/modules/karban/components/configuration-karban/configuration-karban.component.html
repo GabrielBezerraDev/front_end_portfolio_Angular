@@ -1,20 +1,65 @@
-<div class="modal-karban">
-  <h1>Configuração</h1>
-  <hr>
-  <div class="set-configuration">
-  <form [formGroup]="formGroup">
-    <div>
-      <h3>Quantidade de etapas</h3>
-      <input (input)="stagesAmount()" formControlName="stagesAmount" type="text">
+<div class="modal-karban" *ngIf="!isSettingKarban || optionsCard">
+  <div *ngIf="!isSettingKarban">
+    <h1>Configuração</h1>
+    <hr>
+    <div class="set-configuration">
+    <form [formGroup]="configurationKarban">
+      <div>
+        <h3>Quantidade de etapas</h3>
+        <input (input)="stagesAmount()" formControlName="stagesAmount" type="text">
+      </div>
+      <div>
+        <h3>Selecione o nome</h3>
+        <button (click)="addStageName(name.value)">Adicionar</button>
+        <input #name type="text">
+      </div>
+    </form>
     </div>
-    <div>
-      <h3>Selecione o nome</h3>
-      <button (click)="addStageName(name.value)">Adicionar</button>
-      <input #name type="text">
+    <div class="footer-modal-karban">
+      <button (click)="createKarban()">Pronto</button>
     </div>
-  </form>
   </div>
-  <div class="footer-modal-karban">
-    <button (click)="createKarban()">Pronto</button>
+  <!-- <div #cardConfiguration>
+    <h1>Criar card</h1>
+    <hr>
+    <div class="set-configuration">
+    <form [formGroup]="configurationCard">
+      <div>
+        <h3>Título Card</h3>
+        <input formControlName="tittleCard" type="text">
+      </div>
+      <div>
+        <h3>Descrição Card</h3>
+        <button>Adicionar</button>
+        <input #name type="text" formControlName="descriptionCard">
+      </div>
+    </form>
+    </div>
+    <div class="footer-modal-karban">
+      <button (click)="createCard()">Pronto</button>
+    </div>
+  </div> -->
+  <div *ngIf="optionsCard">
+    <div class="header">
+      <h1>Criar card</h1>
+      <i (click)="closeOptionsCard()" class="bi bi-x-lg"></i>
+    </div>
+    <hr>
+    <div class="set-configuration">
+    <form [formGroup]="configurationCard">
+      <div>
+        <h3>Título Card</h3>
+        <input formControlName="tittleCard" type="text">
+      </div>
+      <div>
+        <h3>Descrição Card</h3>
+        <button>Adicionar</button>
+        <input #name type="text" formControlName="descriptionCard">
+      </div>
+    </form>
+    </div>
+    <div class="footer-modal-karban">
+      <button (click)="createCard()">Pronto</button>
+    </div>
   </div>
 </div>

@@ -1,4 +1,4 @@
 <main>
-      <app-configuration-karban (onStagesKarban)="setKarbanStages($event)"></app-configuration-karban>
-      <app-stages-karban [karbanStages]="karbanStages"></app-stages-karban>
+      <app-configuration-karban (onNewCard)="setCard($event)" (onStagesKarban)="setKarbanStages($event)"></app-configuration-karban>
+      <app-stages-karban (onActivedOptionsCard)="activedOptionsCard($event)"></app-stages-karban>
 </main>

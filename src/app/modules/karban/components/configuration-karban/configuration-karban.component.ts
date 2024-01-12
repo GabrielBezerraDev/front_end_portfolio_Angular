@@ -1,5 +1,6 @@
-import { Component, ElementRef, EventEmitter, Output, Renderer2 } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, ElementRef, EventEmitter, Input, Output, Renderer2 } from '@angular/core';
+import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
+import { ICardStage } from '../../interfaces/ICardStage';
 
 interface Configuration{
   stagesAmount: Array<number | AbstractControl>,
@@ -13,12 +14,27 @@ interface Configuration{
 })
 export class ConfigurationKarbanComponent {
 
-  @Output() onStagesKarban: EventEmitter<Array<string>> = new EventEmitter<Array<string>>();
+  @Input() optionsCard: boolean;
 
-public formGroup = this.formBuilder.group({
-  stagesAmount: [0],
-  names: [[]]
-})
+  @Output() onStagesKarban: EventEmitter<Array<string>> = new EventEmitter<Array<string>>();
+  @Output() onNewCard: EventEmitter<ICardStage> = new EventEmitter<ICardStage>();
+
+  public configurationKarban = this.formBuilder.group({
+    stagesAmount: [0],
+    names: [[]]
+  })
+
+  public configurationCard = this.formBuilder.group({
+    tittleCard: "",
+    descriptionCard: ""
+  })
+  public test: ICardStage = {
+    tittleCard:"",
+    descriptionCard:"",
+    stageCard:""
+  };
+
+  public isSettingKarban: boolean = false;
 
 constructor(
   public formBuilder: FormBuilder,
@@ -32,16 +48,16 @@ private initForm():void{
 
 }
 
-private getValueForm<T>(key: keyof (typeof this.formGroup.value)): T{
-  return this.formGroup.value[key] as T;
+private getValueForm<T>(key: keyof (typeof this.configurationKarban.value)): T{
+  return this.configurationKarban.value[key] as T;
 }
 
-private setValueForm<T>(key: keyof (typeof this.formGroup.value), value: T): void{
-  (this.formGroup.value[key] as T) = value;
+private setValueForm<T>(key: keyof (typeof this.configurationKarban.value), value: T): void{
+  (this.configurationKarban.value[key] as T) = value;
 }
 
 private showValue():void{
-  console.log(this.formGroup.value.names);
+  console.log(this.configurationKarban.value.names);
 }
 
 public stagesAmount():void{
@@ -53,18 +69,27 @@ public stagesAmount():void{
   }
 }
 
+public closeOptionsCard():void{
+    this.optionsCard = false;
+}
+
 public addStageName(name:string):void{
   this.getValueForm<Array<string>>("names").push(name);
 }
 
 public showForm():void{
-  console.log(this.formGroup.value);
+  // console.log(this.configurationKarban.value);
 }
 
 public createKarban():void{
-  console.log(this.getValueForm<Array<string>>("names"));
+  // console.log(this.getValueForm<Array<string>>("names"));
   this.onStagesKarban.emit(this.getValueForm<Array<string>>("names"));
-  this.renderer.addClass(this.elementRef.nativeElement.querySelector(".modal-karban"), "hidden-modal");
+  // this.renderer.addClass(this.elementRef.nativeElement.querySelector(".modal-karban"), "hidden-modal");
+  this.isSettingKarban = true;
+}
+
+public createCard():void{
+  this.onNewCard.emit(this.configurationCard.value as ICardStage);
 }
 
 }

@@ -1,7 +1,7 @@
 export enum EMasteryLevel{
   INICIANTE = "Iniciante",
   INTERMEDIARIO = "Intermediário",
-  AVANÇADO = "Avançado",
   PROEFICIENTE = "Proeficiente",
+  AVANÇADO = "Avançado",
   ESPECIALISTA = "Especialista"
 }
