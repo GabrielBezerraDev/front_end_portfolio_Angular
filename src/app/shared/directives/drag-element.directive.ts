@@ -10,6 +10,7 @@ export class DragElementDirective {
   public position3: number;
   public position4: number;
 
+
   constructor(
     private elementRef: ElementRef
   ) { }

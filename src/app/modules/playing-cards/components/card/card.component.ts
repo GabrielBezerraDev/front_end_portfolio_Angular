@@ -25,11 +25,8 @@ export class CardComponent implements OnInit{
   }
 
   ngOnInit(): void {
-      // console.log(this.naipes);
       for(let i: number = 0; i < 56; i++){
         this.randomPick(this.typesCards, this.typeChoiced);
-        console.log(this.cardsToPlay);
-        console.log(this.naipes);
         this.randomPick(this.cardsValues, this.cardValuePicked, true);
       }
       // this.onDeckCards.emit(this.cardsToPlay);
@@ -40,8 +37,6 @@ export class CardComponent implements OnInit{
     if(typeof getElement === "number"){
       this.typeChoiced = indexElement;
       this.pathCards = `${this.pathCards}${arrayElements[this.typeChoiced]}_`
-      console.log(this.typesCards);
-      console.log(this.typeChoiced);
       if(this.naipes[arrayElements[this.typeChoiced] as string].length <= 0){
         this.pathCards = "/assets/imgs/BaralhoAssets/CuteCards";
         // let index: number = arrayElements.indexOf(arrayElements[this.typeChoiced]);
