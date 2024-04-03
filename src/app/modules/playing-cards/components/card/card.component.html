@@ -1,2 +1,18 @@
-<img *ngFor="let card of cardsToPlay "src="{{card}}">
+<!--<img *ngFor="let card of cardsToPlay "src="{{card}}">-->
+<div class="table-cards">
+  <div class="deck-one move" appDragElement>
+    <div class="front-card">
+      <img src="{{deckOne[0]}}">
+    </div>
+    <div class="back-card">
+    </div>
+  </div>
+  <div class="deck-two move" appDragElement>
+    <div class="front-card">
+      <img src="{{deckTwo[0]}}">
+    </div>
+    <div class="back-card">
+    </div>
+  </div>
+</div>
 

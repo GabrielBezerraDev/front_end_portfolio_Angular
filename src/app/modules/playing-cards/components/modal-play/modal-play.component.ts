@@ -13,7 +13,7 @@ export class ModalPlayComponent {
   public setUsername():void{
     let inputUser: HTMLInputElement = this.elementRef.nativeElement.querySelector("input");
     this.renderer.setStyle(this.elementRef.nativeElement.querySelector(".modal-user"),"display","none");
-    this.playingCardService.get().subscribe(
+    this.playingCardService.setNewPlayer({username:inputUser.value}).subscribe(
       {
         next: (value) => console.log(value)
       }

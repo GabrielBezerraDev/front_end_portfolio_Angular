@@ -18,6 +18,7 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/portifolio-angular",
+
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -68,7 +69,9 @@
               "browserTarget": "Portifolio_Angular:build:production"
             },
             "development": {
-              "browserTarget": "Portifolio_Angular:build:development"            }
+              "browserTarget": "Portifolio_Angular:build:development",
+              "proxyConfig": "src/proxy.conf.js"
+            }
           },
           "defaultConfiguration": "development"
         },

@@ -15,8 +15,9 @@ export class PlayingCardsComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     styleRoot?.style.setProperty("--body-y","hidden");
+    styleRoot?.style.setProperty("--body-x","hidden");
   }
 
-  
+
 
 }

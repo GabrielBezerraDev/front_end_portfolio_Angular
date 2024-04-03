@@ -15,8 +15,4 @@ export class PlayingCardService {
     return this.httpService.post<IPlaycardUser,IPlaycardUser>(`${this.urlDefault}create`,body);
   }
 
-  public get(){
-    return this.httpService.get<string>(`${this.urlDefault}`);
-  }
-
 }

@@ -4,6 +4,7 @@ import { AttriubutesPokemon } from '../interfaces/attributes-pokemon';
 import { PokemonsTypes } from '../enum/enum-typesPokemon';
 import { ScreenUtils } from 'src/app/shared/utils/screen-utils';
 import { GridStatus } from '../interfaces/grid-status';
+import { PokemonService } from 'src/app/services/pokemon.service';
 
 @Component({
   selector: 'app-pokedex-page',
@@ -24,20 +25,27 @@ public typePokemon: Array<TypePokemon>;
     private elementRef: ElementRef,
     private renderer: Renderer2,
     public pokemonTypes: PokemonsTypes,
-    private screenUtils: ScreenUtils
+    private screenUtils: ScreenUtils,
+    private pokemonService: PokemonService
   ){
 
   }
 
   ngOnInit(): void {
-    this.typePokemon = Object.values(this.pokemonTypes);
+    this.pokemonService.getAllTypePokemon().subscribe(
+      {
+        next: (typePokemon: Array<TypePokemon>) => {
+          this.typePokemon = typePokemon;
+          console.log(this.typePokemon);
+        }
+      }
+      );
     this.sectionAttributes = this.elementRef.nativeElement.querySelector(".section-attributes");
     this.alignTypes = this.elementRef.nativeElement.querySelector(".align-type");
     this.setLayoutDefault();
     console.log(this.screenUtils.getWidthScreen());
     if(this.screenUtils.getWidthScreen() < 1470) this.asideDefault = false;
     if(this.screenUtils.getWidthScreen() <= 892) this.gridSecondary = false;
-    //892
   }
 
   public changeElement(side:string):void{
@@ -59,14 +67,6 @@ public typePokemon: Array<TypePokemon>;
         this.renderer.addClass(carouselElements[this.carouselCurrent],"show");
 
     }
-
-    // element.scrollIntoView({
-    //   inline:"center",
-    //   behavior:"smooth"
-    // })
-
-    // console.log(carouselElements);
-    // console.dir(cardCarousel);
   }
 
   public changeGrid(gridStatus:GridStatus):void{

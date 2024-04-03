@@ -6,6 +6,7 @@ import { PlayingCardsComponent } from './playing-cards.component';
 import { CardComponent } from './components/card/card.component';
 import { ModalModule } from 'src/app/shared/modules/modal/modal.module';
 import { ModalPlayComponent } from './components/modal-play/modal-play.component';
+import { DirecivesModule } from 'src/app/shared/directives/directives.module';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ModalPlayComponent } from './components/modal-play/modal-play.component
   ],
   imports: [
     CommonModule,
-    PlayingCardsRoutingModule
+    PlayingCardsRoutingModule,
+    DirecivesModule
   ]
 })
 export class PlayingCardsModule { }

@@ -4,8 +4,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { Observer } from './shared/directives/intersection-observer.directive';
-import { HttpCoreInterceptor } from './http.core.interceptor';
 
 @NgModule({
   declarations: [
@@ -16,14 +14,6 @@ import { HttpCoreInterceptor } from './http.core.interceptor';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule
-  ],
-  providers: [
-    HttpCoreInterceptor,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: HttpCoreInterceptor,
-      multi: true,
-    }
   ],
   bootstrap: [AppComponent]
 })

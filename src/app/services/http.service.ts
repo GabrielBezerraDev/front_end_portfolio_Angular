@@ -7,7 +7,7 @@ import { body } from '../shared/utils/document-utils';
   providedIn: 'root'
 })
 export class HttpService{
-private urlDefault: string = "localhost:3000/api/";
+private urlDefault: string = "http://localhost:3000/api/";
 
 constructor(private http: HttpClient) { }
 

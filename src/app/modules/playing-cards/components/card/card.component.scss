@@ -1,0 +1,42 @@
+.table-cards{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.deck-one, .deck-two{
+  position: absolute;
+  transform: translate(-50%,-50%);
+  transform-style: preserve-3d;
+  transition: transform 0.5s linear;
+  width: 92px;
+  height: 136px;
+  transform-origin: center;
+}
+
+// .deck-one:hover, .deck-two:hover{
+//   transform: rotateY(180deg);
+// }
+
+.deck-one{
+  top: 40%;
+  left: 25%;
+}
+
+.deck-two{
+  top: 40%;
+  left: 75%;
+
+}
+
+.front-card,.back-card{
+  width: 92px;
+  height: 136px;
+  backface-visibility: hidden;
+}
+
+.back-card{
+  transform: rotateY(180deg);
+  background-color: #00ff59;
+  border-radius: 10px;
+}
