@@ -18,6 +18,11 @@ const routes: Routes = [
     loadChildren: () => import("../playing-cards/playing-cards.module").then( m => m.PlayingCardsModule)
   },
   {
+    path: "game-bar",
+    pathMatch: 'full',
+    loadChildren: () => import("../game-bar/game-bar.module").then(m => m.GameBarModule)
+  },
+  {
     path:"",
     component: HomeComponent
   },
