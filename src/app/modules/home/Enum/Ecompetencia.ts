@@ -45,7 +45,7 @@ export class ECompetencia{
     },
     {
       titulo: "Back-End",
-      estilo:"svg-img-back",
+      estilo:"svg-img-front",
       id: "back",
       maestrias:
       [
