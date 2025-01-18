@@ -1,13 +1,10 @@
 import { Component, ElementRef, Renderer2, OnInit, Output, EventEmitter, ViewChild, ViewChildren, Query, QueryList, AfterContentInit, AfterViewInit, AfterViewChecked, Input} from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import { ICompetencias } from '../interfaces/Icompetencias';
-import { styleRoot, widthScreen } from 'src/app/shared/utils/style-utils';
+import { styleRoot } from 'src/app/shared/utils/style-utils';
 import { EMasteryLevel } from '../Enum/Emastery-level';
 import { ScreenUtils } from 'src/app/shared/utils/screen-utils';
-import { body } from 'src/app/shared/utils/document-utils';
 import { ModalComponent } from 'src/app/shared/modules/modal/modal.component';
 import { ECompetencia } from '../Enum/Ecompetencia';
-import { style } from '@angular/animations';
 
 
 @Component({
@@ -23,21 +20,19 @@ public competencias:Array<ICompetencias> = [];
 public showCompetencia: Array<boolean> = [true, true, true, true, true, true, true];
 public levels: NodeListOf<HTMLElement>;
 public mastery: NodeListOf<HTMLElement>;
-public cout: number = 0;
-public coutClass: Array<number> = [0,0,0,0,0,0,0];
+public countClass: Array<number> = [0,0,0,0,0,0,0,0];
 public level: number = 0;
 public masteryLevels: Array<string> = Object.values(EMasteryLevel);
 public styleSpan: string = "styleLegend";
 public isAlreadyPage: boolean = false;
 public modalActived: boolean = false;
 public menuIsOpen: boolean = false;
-public isClicked: boolean = false;
+public isClicked: Array<boolean> = [false, false, false, false, false, false, false];
 
   constructor(
     private ecompetencias: ECompetencia,
     private elementRef: ElementRef,
     private renderer: Renderer2,
-    private screenUtils: ScreenUtils,
   ){
     this.competencias = this.ecompetencias.COMPETENCIAS;
   }
@@ -66,17 +61,15 @@ public navigateTo():void{
 
 public hiddenMenu():void{
   this.renderer.addClass(this.elementRef.nativeElement.querySelector(".menu-page"),"hidden-menu");
-  // alert("Escondeu");
 }
 
 public showMenu():void{
   this.renderer.removeClass(this.elementRef.nativeElement.querySelector(".menu-page"),"hidden-menu");
-  // alert("Apareceu");
 }
 
 public selectedTech(indexTech:number, indexMain: number, level: number, tech: string, resumo?: string):void{
   this.showCompetencia[indexMain] = true;
-  this.isClicked = true;
+  this.isClicked[indexMain] = true;
   setTimeout(() => {
     console.log(this.mastery);
     this.levels = this.mastery[indexMain].querySelectorAll(".mastery-level");
@@ -102,14 +95,14 @@ public setLegends(indexMain:number, tech: string, level:number):void{
 }
 
 public animationBar(level: number, indexMain: number):void{
-  if(this.coutClass[indexMain] === level) return;
+  if(this.countClass[indexMain] === level) return;
   setTimeout(() => {
-    if(level > this.coutClass[indexMain]){
-      this.renderer.setStyle(this.levels[this.coutClass[indexMain]], "width","20%");
-      this.coutClass[indexMain]++;
+    if(level > this.countClass[indexMain]){
+      this.renderer.setStyle(this.levels[this.countClass[indexMain]], "width","25%");
+      this.countClass[indexMain]++;
     }else{
-      this.coutClass[indexMain]--;
-      this.renderer.setStyle(this.levels[this.coutClass[indexMain]], "width","0%");
+      this.countClass[indexMain]--;
+      this.renderer.setStyle(this.levels[this.countClass[indexMain]], "width","0%");
     }
     this.animationBar(level,indexMain);
   }, 500)
